@@ -73,8 +73,8 @@ this.showImageNameError = true;
       this.showImageNameError = false;
     }
   }
-/*   addBanners() {
-    this.message = 'Banners added';
+  addBanners() {
+    /* this.message = 'Banners added';
     const formData: any = new FormData();
     this.fileLength = this.fileToUpload.length;
     for (let i = 0; i <= this.fileLength; i++) {
@@ -87,6 +87,6 @@ this.showImageNameError = true;
       this.router.navigate(['settings/viewbanners']);
     }, error => {
       console.log(error);
-    });
-  } */
+    }); */
+  }
 }

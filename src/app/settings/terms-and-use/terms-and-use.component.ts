@@ -24,14 +24,14 @@ export class TermsAndUseComponent implements OnInit {
       termsDetails: ['']
     });
   }
-/*   createTerms() {
-    this.termsModel = new TermsUse();
+  createTerms() {
+   /*  this.termsModel = new TermsUse();
     this.termsModel.details = this.termsForm.controls.termsDetails.value;
     this.termsModel.heading = this.termsForm.controls.termsHeading.value;
     this.settingService.addTerms(this.termsModel).subscribe(data => {
          this.router.navigate(['settings/viewterms']);
     }, err => {
       console.log(err);
-    });
-      } */
+    }); */
+      }
 }

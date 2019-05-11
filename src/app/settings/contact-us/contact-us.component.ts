@@ -28,14 +28,14 @@ export class ContactUsComponent implements OnInit {
       address: ['']
     });
   }
- /*  addContactDetail() {
-    this.contactModel = new ContactUs();
+  addContactDetail() {
+  /*   this.contactModel = new ContactUs();
     this.contactModel.emailId = this.contactForm.controls.emailId.value;
     this.contactModel.address = this.contactForm.controls.address.value;
     this.contactModel.phoneNumber = this.contactForm.controls.phoneNumber.value;
     this.settingService.addContact(this.contactModel).subscribe(data => {
     }, err => {
       console.log(err);
-    });
-      } */
+    }); */
+      }
 }

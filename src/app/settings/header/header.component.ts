@@ -54,8 +54,8 @@ export class HeaderComponent implements OnInit {
       }
     }
   }
- /*  addTemplate() {
-    this.message = 'Logo  added';
+  addTemplate() {
+    /* this.message = 'Logo  added';
     const formData: any = new FormData();
     this.fileLength = this.fileToUpload.length;
     for (let i = 0; i <= this.fileLength; i++) {
@@ -68,13 +68,13 @@ export class HeaderComponent implements OnInit {
       });
     }, error => {
       console.log(error);
-    });
-  } */
- /*  getHeader() {
-    this.settingService.getHeaderDetails().subscribe(data => {
+    }); */
+  }
+  getHeader() {
+    /* this.settingService.getHeaderDetails().subscribe(data => {
       this.headerModel = data;
     }, error => {
       console.log(error);
-    });
-  } */
+    }); */
+  }
 }

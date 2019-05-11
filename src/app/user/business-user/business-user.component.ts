@@ -36,5 +36,8 @@ export class BusinessUserComponent implements OnInit {
   showOrderDetails(e) {
     this.router.navigate(['user/viewBusinessUser']);
   }
+  applyFilter(e) {
+    
+  }
 }
 

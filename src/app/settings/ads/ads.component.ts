@@ -73,8 +73,8 @@ this.showImageNameError = true;
       this.showImageNameError = false;
     }
   }
-  /* addAds() {
-    this.message = 'Hot Products added';
+  addAds() {
+    /* this.message = 'Hot Products added';
     const formData: any = new FormData();
     this.fileLength = this.fileToUpload.length;
     for (let i = 0; i <= this.fileLength; i++) {
@@ -87,6 +87,6 @@ this.showImageNameError = true;
       this.router.navigate(['settings/viewhotproducts']);
     }, error => {
       console.log(error);
-    });
-  } */
+    }); */
+  }
 }

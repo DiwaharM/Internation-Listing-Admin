@@ -38,14 +38,17 @@ get faqForms() {
 deleteFAQs(i) {
   this.faqForms.removeAt(i);
 }
-/* createPolicy() {
-  this.faqModel = new FAQ();
+createPolicy() {
+ /*  this.faqModel = new FAQ();
   this.faqModel.faqHeading = this.faqForm.controls.faqHeading.value;
   this.faqModel.faqDetails = this.faqForm.controls.faqs.value;
   this.settingService.addFAQ(this.faqModel).subscribe(data => {
        this.router.navigate(['settings/viewfaq']);
   }, err => {
     console.log(err);
-  });
-    } */
+  }); */
+    }
+    cancel() {
+      
+    }
 }

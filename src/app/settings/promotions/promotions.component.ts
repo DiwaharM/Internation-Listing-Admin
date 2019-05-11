@@ -129,8 +129,8 @@ export class PromotionsComponent implements OnInit {
     } */
   }
 
-/*   createPromotions() {
-    this.message = 'Promotions Created';
+  createPromotions() {
+  /*   this.message = 'Promotions Created';
     this.promotionModel = new Promotion();
     this.promotionModel.productId = this.clickedProducts;
     this.promotionModel.promotionPosition =  this.promotionForm.controls.position.value;
@@ -142,6 +142,6 @@ export class PromotionsComponent implements OnInit {
       this.router.navigate(['settings/viewpromotions']);
     }, err => {
       console.log(err);
-    });
-  } */
+    }); */
+  }
 }

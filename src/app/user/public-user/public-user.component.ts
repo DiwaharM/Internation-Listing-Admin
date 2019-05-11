@@ -36,4 +36,7 @@ export class PublicUserComponent implements OnInit {
       console.log(err);
     });
   } */
+  applyFilter(e) {
+    
+  }
 }

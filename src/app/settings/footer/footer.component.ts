@@ -61,8 +61,8 @@ export class FooterComponent implements OnInit {
     }
   }
 
-  /* addFooter() {
-this.footerModel = new Footer();
+  addFooter() {
+/* this.footerModel = new Footer();
 this.footerModel.address = this.footerForm.controls.address.value;
 this.footerModel.instagramLink = this.footerForm.controls.instagramLink.value;
 this.footerModel.facebookLink = this.footerForm.controls.facebookLink.value;
@@ -77,11 +77,11 @@ this.settingService.addFooterdetails(this.footerModel).subscribe(data => {
   this.addLogo(data[0]._id);
 }, err => {
   console.log(err);
-});
+}); */
   }
- */
-/*   addLogo(id) {
-    const formData: any = new FormData();
+
+  addLogo(id) {
+   /*  const formData: any = new FormData();
     this.fileLength = this.fileToUpload.length;
     for (let i = 0; i <= this.fileLength; i++) {
       formData.append('uploads[]', this.fileToUpload[i]);
@@ -89,6 +89,6 @@ this.settingService.addFooterdetails(this.footerModel).subscribe(data => {
     this.settingService.uploadLogo(formData, id).subscribe(data => {
     }, error => {
       console.log(error);
-    });
-  } */
+    }); */
+  }
 }

@@ -39,13 +39,16 @@ get policyForms() {
 deletePolicies(i) {
   this.policyForms.removeAt(i);
 }
-/* createPolicy() {
-  this.privacyModel = new PrivacyPolicy();
+createPolicy() {
+  /* this.privacyModel = new PrivacyPolicy();
   this.privacyModel.policyHeading = this.privacyForm.controls.policyHeading.value;
   this.privacyModel.policies = this.privacyForm.controls.policies.value;
   this.settingService.addPrivacyPolicy(this.privacyModel).subscribe(data => {
   }, err => {
     console.log(err);
-  });
-    } */
+  }); */
+    }
+    cancel() {
+      
+    }
 }
