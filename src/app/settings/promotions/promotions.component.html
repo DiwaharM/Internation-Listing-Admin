@@ -1,0 +1,103 @@
+<div class="container-fluid">
+  <mat-horizontal-stepper #stepper>
+    <mat-step>
+      <ng-template matStepLabel>Create Promotion</ng-template>
+      <form [formGroup]="promotionForm">
+          <div class="container-fluid">
+              <div class="row">
+                <div class="form-group col-md-8">
+                  <div class="form-group col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Promotion Title" formControlName="promotionTitle">
+                    </mat-form-field>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Promotion Position" formControlName="position">
+                        <mat-error *ngIf="!promotionForm.controls['position'].errors?.required">
+                            Enter the valid
+                            <strong>Number</strong>
+                          </mat-error>
+                      </mat-form-field>
+                    </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row">
+                <div fxFlex="50%">
+                  <button mat-raised-button color="warn" matStepperNext>
+                    Next
+                  </button>
+                </div>
+              </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Select the Company</ng-template>
+        <table mat-table [dataSource]="productData" matSort class="container-fluid ">
+            <ng-container matColumnDef="select">
+                <th mat-header-cell *matHeaderCellDef>
+                 <!--  <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? masterToggle() : null" [checked]="isAtLeaseOneSelected() && isAllSelected()"
+                    [indeterminate]="isAtLeaseOneSelected() && !isAllSelected()" >
+                  </mat-checkbox> -->
+                  <mat-checkbox></mat-checkbox>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                <!--   <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? rowToggle(row) : null" [checked]="selection.isSelected(row)">
+                  </mat-checkbox> -->
+                  <mat-checkbox></mat-checkbox>
+                </td>
+              </ng-container>
+            <ng-container matColumnDef="listing">
+              <th mat-header-cell *matHeaderCellDef> Listing
+               
+              </th>
+              <td mat-cell *matCellDef="let element">
+                <a (click)="viewProduct(element)">
+                  <img src="../../../assets/image/Hyundai-Zentrale-Wien-02.jpg" style="width: 200px; height: 125px;" /></a> </td>
+            </ng-container>
+            <ng-container matColumnDef="companyName">
+      
+              <th mat-header-cell *matHeaderCellDef> Company Name <br>
+               
+      
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+            </ng-container>
+      
+      
+            <ng-container matColumnDef="packageDetail">
+              <th mat-header-cell *matHeaderCellDef> Package Detail<br>
+      
+      
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.packageDetail}} </td>
+            </ng-container>
+          <!--   <ng-container matColumnDef="skuCode">
+              <th mat-header-cell *matHeaderCellDef> SKU Code<br>
+                
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.skuCode}} </td>
+            </ng-container> -->
+           
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 50]" showFirstLastButtons></mat-paginator>
+      <div class="row">
+        <div class="col-md-6">
+          <button mat-raised-button color="warn" matStepperPrevious>
+            Back
+          </button>
+        </div>
+        <div  class="float-left col-md-6" >
+            <button mat-raised-button color="warn" (click)="createPromotions()">
+              Save
+            </button>
+          </div>
+      </div> 
+    </mat-step>
+   
+  </mat-horizontal-stepper>
+</div>

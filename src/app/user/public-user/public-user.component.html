@@ -1,0 +1,36 @@
+<div class="pageBoxLg">
+  <div class="row">
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-4">
+        <mat-form-field>
+            <input matInput placeholder="Search Customers" (keyup)="applyFilter($event.target.value)">
+          </mat-form-field>
+      </div>
+  </div>
+  <div class="row">
+    <table mat-table [dataSource]="publicData" matSort class="container-fluid ">
+      <ng-container matColumnDef="customerName">
+        <th mat-header-cell *matHeaderCellDef> Customer Name
+        </th>
+        <td mat-cell *matCellDef="let element">
+         <a (click)="showOrderDetails(element)">{{element.customerName}}</a>  </td>
+      </ng-container>   
+      <ng-container matColumnDef="mobileNumber">
+          <th mat-header-cell *matHeaderCellDef> 
+            Mobile Number
+          </th>
+          <td mat-cell *matCellDef="let element"> 
+              <a (click)="showOrderDetails(element)"> {{element.mobileNumber}} </a>    </td>
+        </ng-container>
+      <ng-container matColumnDef="emailId">
+        <th mat-header-cell *matHeaderCellDef>   EmailID<br>
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.emailId}}  </td>
+      </ng-container> 
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
