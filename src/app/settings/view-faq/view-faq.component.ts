@@ -12,8 +12,7 @@ import { SettingsService } from '../settings.service';
   styleUrls: ['./view-faq.component.css']
 })
 export class ViewFaqComponent implements OnInit {
-  faqModel = [{faqHeading: 'Qusestion about operation', faqDetails: [{faqQuestion: 'How to add company details ?',
-  faqAnswers: 'You can add company through company detail option'}]}];
+  faqModel;
   privacyFAQForm: FormGroup;
   message;
   action;
@@ -21,19 +20,19 @@ export class ViewFaqComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router, private settingService: SettingsService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-   /*  this.getFAQ(); */
+    this.getFAQ();
   }
- /*  getFAQ () {
-    this.settingService.getFAQ().subscribe(data => {
+  getFAQ() {
+    this.settingService.getFaqDetails().subscribe(data => {
       this.faqModel = data;
     });
-  } */
+  }
   editFAQ(data) {
     this.router.navigate(['settings/editfaq', data._id]);
   }
-/*   deleteFAQ(data) {
+  deleteFAQ(data) {
     this.message = 'Details deleted Successfully';
-    this.settingService.deleteSingleFAQ(data).subscribe(val => {
+    this.settingService.deleteFaq(data).subscribe(val => {
       this.faqModel = val;
       this.snackBar.open(this.message, this.action, {
         duration: 2000
@@ -41,5 +40,5 @@ export class ViewFaqComponent implements OnInit {
  }, err => {
    console.log(err);
  });
-  } */
+  }
 }

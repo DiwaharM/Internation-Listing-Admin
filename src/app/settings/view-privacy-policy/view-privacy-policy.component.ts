@@ -27,7 +27,7 @@ export class ViewPrivacyPolicyComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-  /*   this.getPolicyDetails(); */
+    this.getPolicyDetails();
   }
   createForm() {
     this.privacyEditForm = this.fb.group({
@@ -43,12 +43,12 @@ export class ViewPrivacyPolicyComponent implements OnInit {
     });
     this.policyForms.push(policies);
   }
-  /* getPolicyDetails () {
+  getPolicyDetails() {
     this.settingService.getPolicyDetails().subscribe(data => {
       this.privacyModel = data[0];
       this.addNewForm();
     });
-  } */
+  }
   get policyForms() {
     return this.privacyEditForm.get('policies') as FormArray;
   }
@@ -71,16 +71,26 @@ export class ViewPrivacyPolicyComponent implements OnInit {
   cancelPolicy() {
     this.edit = false;
   }
-/*   updatePolicy(formvalue, modelvalue) {
+  updatePolicy(formvalue, modelvalue) {
     this.message = 'Details updated';
     this.privacyAddModel = new PrivacyPolicy();
     this.privacyAddModel.policyHeading = formvalue.controls.policyHeading.value;
-  this.privacyAddModel.policies = formvalue.controls.policies.value;
-    this.settingService.updatePrivacyPolicy(this.privacyAddModel, formvalue.controls.id.value).subscribe(data => {
+    this.privacyAddModel.policies = formvalue.controls.policies.value;
+    this.settingService.updatePolicyDetails(this.privacyAddModel, formvalue.value.id).subscribe(data => {
       this.snackBar.open(this.message, this.action, {
         duration: 2000,
       });
-      this.privacyModel = data;
+      this.privacyModel = data[0];
+      this.cancelPolicy(); /*
+      this.getPolicyDetails(); */
+    }, err => {
+      console.log(err);
+    });
+  }
+/*   deletePolicy(data) {
+    this.settingService.deletePolicy(data._id).subscribe(val => {
+      this.privacyAddModel = val;
+      this.getPolicyDetails();
     }, err => {
       console.log(err);
     });

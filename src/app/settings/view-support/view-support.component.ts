@@ -14,7 +14,7 @@ import {Support} from '../support/support.model';
   styleUrls: ['./view-support.component.css']
 })
 export class ViewSupportComponent implements OnInit {
-  supportModel = [{whatsappNumber: 9845349836, emailId: 'ram@gmail.com', openTimings: '9.00 AM to 9.00 PM'}];
+  supportModel;
   supportAddModel: Support;
   supportEditForm: FormGroup;
   supportForm: FormGroup;
@@ -24,7 +24,7 @@ export class ViewSupportComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-   /*  this.getSupportDetails(); */
+    this.getSupportDetails();
   }
   createForm() {
     this.supportEditForm = this.fb.group({
@@ -35,18 +35,18 @@ export class ViewSupportComponent implements OnInit {
     });
   }
 
-/*   getSupportDetails () {
+  getSupportDetails() {
     this.settingService.getSupportDetails().subscribe(data => {
       this.supportModel = data;
     });
-  } */
+  }
   editAddress(data) {
     data.detailsUpdate = true;
   }
   cancelDetails(data) {
     data.detailsUpdate = false;
   }
-  /* updateDetails(id, whatsappno, mailid, opentimings) {
+  updateDetails(id, whatsappno, mailid, opentimings) {
     this.message = 'Details updated';
     this.supportAddModel = new Support();
     this.supportAddModel.whatsappNumber = whatsappno;
@@ -57,6 +57,14 @@ export class ViewSupportComponent implements OnInit {
         duration: 2000,
       });
       this.supportModel = data;
+     /*  this.router.navigate(['settings/viewsupport']); */
     });
-  } */
+  }
+  deleteSupport(data) {
+    this.settingService.deleteSupport(data._id).subscribe(val => {
+      this.supportModel = val;
+    }, err => {
+      console.log(err);
+    });
+  }
 }

@@ -39,16 +39,16 @@ deleteFAQs(i) {
   this.faqForms.removeAt(i);
 }
 createPolicy() {
- /*  this.faqModel = new FAQ();
+  this.faqModel = new FAQ();
   this.faqModel.faqHeading = this.faqForm.controls.faqHeading.value;
   this.faqModel.faqDetails = this.faqForm.controls.faqs.value;
-  this.settingService.addFAQ(this.faqModel).subscribe(data => {
+  this.settingService.addFaq(this.faqModel).subscribe(data => {
        this.router.navigate(['settings/viewfaq']);
   }, err => {
     console.log(err);
-  }); */
+  });
     }
     cancel() {
-      
+      this.router.navigate(['settings/viewfaq']);
     }
 }

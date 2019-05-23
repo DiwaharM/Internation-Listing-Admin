@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SettingsService } from './settings.service';
 import { SettingsRoutingModule } from './settings-routing.module';
 import { AdsComponent } from './ads/ads.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatSidenavModule,
@@ -50,8 +51,9 @@ import { TermsAndUseComponent } from './terms-and-use/terms-and-use.component';
 import { ViewTermsAndUseComponent } from './view-terms-and-use/view-terms-and-use.component';
 import { FaqComponent } from './faq/faq.component';
 import { ViewFaqComponent } from './view-faq/view-faq.component';
+import { EditfaqComponent } from './editfaq/editfaq.component';
 @NgModule({
-  declarations: [AdsComponent, ViewAdsComponent, BannersComponent, ViewBannersComponent, FooterComponent, ViewFooterComponent, ContactUsComponent, ViewContactUsComponent, PromotionsComponent, ViewPromotionsComponent, SupportComponent, ViewSupportComponent, HeaderComponent, PrivacyPolicyComponent, ViewPrivacyPolicyComponent, TermsAndUseComponent, ViewTermsAndUseComponent, FaqComponent, ViewFaqComponent],
+  declarations: [AdsComponent, ViewAdsComponent, BannersComponent, ViewBannersComponent, FooterComponent, ViewFooterComponent, ContactUsComponent, ViewContactUsComponent, PromotionsComponent, ViewPromotionsComponent, SupportComponent, ViewSupportComponent, HeaderComponent, PrivacyPolicyComponent, ViewPrivacyPolicyComponent, TermsAndUseComponent, ViewTermsAndUseComponent, FaqComponent, ViewFaqComponent, EditfaqComponent],
   imports: [
     CommonModule,
     SettingsRoutingModule,
@@ -63,6 +65,7 @@ import { ViewFaqComponent } from './view-faq/view-faq.component';
     MatMenuModule,
     MatSnackBarModule,
     MatGridListModule,
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

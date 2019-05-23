@@ -6,8 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
 import { SettingsService } from '../settings.service';
-import {Footer} from './footer.model';
-import {LogoImageData} from './footerImageData.model';
+import { Footer } from './footer.model';
+import { LogoImageData } from './footerImageData.model';
 
 @Component({
   selector: 'app-footer',
@@ -59,36 +59,43 @@ export class FooterComponent implements OnInit {
         this.reader.readAsDataURL(file);
       }
     }
+    /* console.log(this.fileToUpload); */
   }
 
   addFooter() {
-/* this.footerModel = new Footer();
-this.footerModel.address = this.footerForm.controls.address.value;
-this.footerModel.instagramLink = this.footerForm.controls.instagramLink.value;
-this.footerModel.facebookLink = this.footerForm.controls.facebookLink.value;
-this.footerModel.pintrestLink = this.footerForm.controls.pintrestLink.value;
-this.footerModel.googlePlusLink = this.footerForm.controls.googlePlusLink.value;
-this.footerModel.twitterLink = this.footerForm.controls.twitterLink.value;
-this.footerModel.map = this.footerForm.controls.map.value;
-this.footerModel.contactNo = this.footerForm.controls.contactNo.value;
-this.footerModel.alternativeContactNo = this.footerForm.controls.alternativeContactNo.value;
-this.footerModel.mailId = this.footerForm.controls.mailId.value;
-this.settingService.addFooterdetails(this.footerModel).subscribe(data => {
-  this.addLogo(data[0]._id);
-}, err => {
-  console.log(err);
-}); */
-  }
-
-  addLogo(id) {
-   /*  const formData: any = new FormData();
+    const formData: any = new FormData();
     this.fileLength = this.fileToUpload.length;
     for (let i = 0; i <= this.fileLength; i++) {
       formData.append('uploads[]', this.fileToUpload[i]);
     }
-    this.settingService.uploadLogo(formData, id).subscribe(data => {
+    this.footerModel = new Footer();
+    this.footerModel.address = this.footerForm.controls.address.value;
+    this.footerModel.instagramLink = this.footerForm.controls.instagramLink.value;
+    this.footerModel.facebookLink = this.footerForm.controls.facebookLink.value;
+    this.footerModel.pintrestLink = this.footerForm.controls.pintrestLink.value;
+    this.footerModel.googlePlusLink = this.footerForm.controls.googlePlusLink.value;
+    this.footerModel.twitterLink = this.footerForm.controls.twitterLink.value;
+    this.footerModel.map = this.footerForm.controls.map.value;
+    this.footerModel.contactNo = this.footerForm.controls.contactNo.value;
+    this.footerModel.alternativeContactNo = this.footerForm.controls.alternativeContactNo.value;
+    this.footerModel.mailId = this.footerForm.controls.mailId.value;
+    this.settingService.addFooterdetails(this.footerModel).subscribe(data => {
+      this.addLogo(data[0]._id);
+    }, err => {
+      console.log(err);
+    });
+  }
+
+  addLogo(id) {
+    const formData: any = new FormData();
+    this.fileLength = this.fileToUpload.length;
+    for (let i = 0; i <= this.fileLength; i++) {
+      formData.append('uploads[]', this.fileToUpload[i]);
+    }
+    this.settingService.uploadFooterLogo(formData, id).subscribe(data => {
+      this.router.navigate(['settings/viewfooter']);
     }, error => {
       console.log(error);
-    }); */
+    });
   }
 }

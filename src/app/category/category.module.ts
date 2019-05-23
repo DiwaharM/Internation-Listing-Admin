@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { UserRoutingModule } from './user-routing.module';
-import { BusinessUserComponent } from './business-user/business-user.component';
-import { PublicUserComponent } from './public-user/public-user.component';
+import { CategoryRoutingModule } from './category-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatSidenavModule,
@@ -34,13 +32,14 @@ import {
   MatPaginatorModule,
   MatTableModule
 } from '@angular/material';
-import { ViewBusinessUserComponent } from './view-business-user/view-business-user.component';
+import { SuperCategoryComponent } from './super-category/super-category.component';
+import { MainCategoryComponent } from './main-category/main-category.component';
 
 @NgModule({
-  declarations: [BusinessUserComponent, PublicUserComponent, ViewBusinessUserComponent],
+  declarations: [SuperCategoryComponent, MainCategoryComponent],
   imports: [
     CommonModule,
-    UserRoutingModule,
+    CategoryRoutingModule,
     ReactiveFormsModule,
     MatSidenavModule,
     MatListModule,
@@ -71,4 +70,4 @@ import { ViewBusinessUserComponent } from './view-business-user/view-business-us
     MatTableModule
   ]
 })
-export class UserModule { }
+export class CategoryModule { }

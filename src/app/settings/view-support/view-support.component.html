@@ -9,7 +9,7 @@
   </div>
   <form [formGroup]="supportEditForm" novalidate style="padding-top:60px">
     <div class="row">
-      <div class="col-md-5 pageBoxl">
+      <div class="col-md-9 pageBoxl">
         <div class="row" *ngFor="let data of supportModel">
           <div class="col-md-6 " *ngIf="!data.detailsUpdate">
             <div class="form-group col-md-12">
@@ -40,11 +40,18 @@
           </div>
           <div class="col-md-6" *ngFor="let data of supportModel">
             <div *ngIf="!data.detailsUpdate">
-              <div class=" form-group col-md-12">Edit
+              <div class="row">
+              <div class=" form-group col-md-6">Edit
                 <button mat-icon-button mat-sm-button color="primary" matTooltip="Edit  Details" (click)="editAddress(data)">
                   <mat-icon> edit </mat-icon>
                 </button>
               </div>
+              <div class=" form-group col-md-6">Delete
+                <button mat-icon-button mat-sm-button color="primary" matTooltip="Delete  Details" (click)="deleteSupport(data)">
+                  <mat-icon> delete_sweep </mat-icon>
+                </button>
+              </div>
+            </div>
               <div class=" form-group col-md-12">
                 <b><small>: {{data.whatsappNumber}}</small></b>
               </div>

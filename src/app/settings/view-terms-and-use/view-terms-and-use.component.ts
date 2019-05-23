@@ -15,7 +15,7 @@ import { SettingsService } from '../settings.service';
   styleUrls: ['./view-terms-and-use.component.css']
 })
 export class ViewTermsAndUseComponent implements OnInit {
-  termsModel = [{heading: 'Terms Heading', details: 'detail ' }];
+  termsModel;
   termsAddModel: TermsUse;
   termsEditForm: FormGroup;
   termsForm: FormGroup;
@@ -26,7 +26,7 @@ export class ViewTermsAndUseComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-    /* this.getTerms(); */
+    this.getTerms();
   }
   createForm() {
     this.termsForm = this.fb.group({
@@ -35,28 +35,29 @@ export class ViewTermsAndUseComponent implements OnInit {
       termsDetails: ['']
     });
   }
- /*  getTerms () {
+  getTerms() {
     this.settingService.getTerms().subscribe(data => {
       this.termsModel = data;
+  /*     console.log(data); */
     }, err => {
       console.log(err);
     });
-  } */
+  }
   editTerms(data) {
     data.detailsUpdate = true;
   }
   cancelTerms(data) {
     data.detailsUpdate = false;
   }
- /*  deleteTerms(data) {
+  deleteTerms(data) {
     this.settingService.deleteSingleTerm(data._id).subscribe(val => {
       this.termsModel = val;
     }, err => {
       console.log(err);
     });
-  } */
-/*   updateTerms(heading, details, id, data) {
-    console.log(id);
+  }
+  updateTerms(heading, details, id, data) {
+    /* console.log(id); */
     this.termsAddModel = new TermsUse();
     this.termsAddModel.heading = heading;
     this.termsAddModel.details = details;
@@ -65,5 +66,5 @@ export class ViewTermsAndUseComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-  } */
+  }
 }

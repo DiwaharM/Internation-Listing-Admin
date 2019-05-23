@@ -24,7 +24,7 @@ export class ViewBannersComponent implements OnInit {
   viewBannerForm: FormGroup;
   bannerModel: Banner;
   displayedColumns: string[] = ['bannerName', 'bannerPosition',  'delete'];
-  bannerData = [{position: 'Home Screen'}];
+  bannerData;
   message;
   action;
 
@@ -32,22 +32,22 @@ export class ViewBannersComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
- /*    this.getBannerDetails(); */
+    this.getBannerDetails();
   }
 createForm() {
   this.viewBannerForm = this.fb.group({
 
   });
 }
- /*  getBannerDetails() {
+  getBannerDetails() {
     this.settingService.getBanners().subscribe(data => {
       this.bannerModel = data;
       this.bannerData = new MatTableDataSource<PeriodicElement>(data);
     }, err => {
       console.log(err);
     });
-  } */
-/* deleteBanners(elem) {
+  }
+  deleteBanners(elem) {
   this.message = 'Banner deleted';
   this.settingService.deleteBanner(elem).subscribe(data => {
   this.snackBar.open(this.message, this.action , {
@@ -57,5 +57,5 @@ createForm() {
 }, err => {
   console.log(err);
 });
-} */
+}
 }

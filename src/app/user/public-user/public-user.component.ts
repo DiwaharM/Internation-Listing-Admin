@@ -12,31 +12,24 @@ import { UserService } from '../user.service';
 export class PublicUserComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  displayedColumns: string[] = ['customerName', 'mobileNumber', 'emailId'];
+  displayedColumns: string[] = ['userName', 'mobileNumber', 'emailId'];
   publicDetails: PublicUser[];
-  publicData = [{customerName: 'Kumaran', mobileNumber: '9868798798', emailId: 'kumar@gmail.com'},
-  {customerName: 'Mani', mobileNumber: '8797664567', emailId: 'mani@gmail.com'},
-  {customerName: 'Rahul', mobileNumber: '9845332266', emailId: 'rahul@gmail.com'},
-  {customerName: 'Babu', mobileNumber: '9532576233', emailId: 'babu@gmail.com'},
-  {customerName: 'Anand', mobileNumber: '8156748532', emailId: 'anand@gmail.com'}  ];
+  publicData;
 
   constructor(private router: Router, private userservice: UserService) { }
 
   ngOnInit() {
-    /* this.viewCustomers(); */
+    this.viewCustomers();
   }
-  /* viewCustomers() {
-    this.customerService.getAllCustomers().subscribe(data => {
-      this.customerDetails = data;
-      this.customerData = data;
-      this.customerData = new MatTableDataSource<RegModel>(data);
-      this.customerData.sort = this.sort;
-      this.customerData.paginator = this.paginator;
+  viewCustomers() {
+    this.userservice.getPublicUser().subscribe(data => {
+  /*    console.log(data); */
+     this.publicData = data;
     }, err => {
       console.log(err);
     });
-  } */
+  }
   applyFilter(e) {
-    
+
   }
 }

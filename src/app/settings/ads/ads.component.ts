@@ -42,7 +42,7 @@ export class AdsComponent implements OnInit {
       position: [''],
     });
   }
-/*   getAdsDetails() {
+ /*  getAdsDetails() {
     this.settingService.getAds().subscribe(data => {
       this.adsModel = data;
     }, err => {
@@ -74,19 +74,19 @@ this.showImageNameError = true;
     }
   }
   addAds() {
-    /* this.message = 'Hot Products added';
+    this.message = 'Hot Products added';
     const formData: any = new FormData();
     this.fileLength = this.fileToUpload.length;
     for (let i = 0; i <= this.fileLength; i++) {
       formData.append('uploads[]', this.fileToUpload[i]);
     }
-    this.settingService.uploadAds(formData, this.adsForm.controls.position.value).subscribe(data => {
+    this.settingService.uploadads(formData, this.adsForm.controls.position.value).subscribe(data => {
       this.snackBar.open(this.message, this.action, {
         duration: 2000,
       });
       this.router.navigate(['settings/viewhotproducts']);
     }, error => {
       console.log(error);
-    }); */
+    });
   }
 }

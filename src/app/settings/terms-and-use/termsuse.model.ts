@@ -1,5 +1,5 @@
 export class TermsUse {
-    _id: string;
+        _id: string;
         heading: string;
         details: string;
         detailsUpdate: boolean;

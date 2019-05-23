@@ -9,6 +9,23 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
       <mat-accordion multi="true" >
+          <mat-expansion-panel class="no-shadow">
+              <mat-expansion-panel-header fxLayout="row" >
+                <mat-panel-title>
+                Category
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-nav-list class="ml-0" dense>
+      <mat-list-item  routerLink="/category/supercategory">
+                    <a>Super Category</a>
+                  </mat-list-item>
+              </mat-nav-list>
+              <mat-nav-list class="ml-0" dense>
+                <mat-list-item  routerLink="/category/maincategory">
+                              <a>Main Category</a>
+                            </mat-list-item>
+                        </mat-nav-list>
+            </mat-expansion-panel>
         <mat-expansion-panel class="no-shadow">
           <mat-expansion-panel-header fxLayout="row" >
             <mat-panel-title>

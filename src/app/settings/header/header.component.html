@@ -19,7 +19,7 @@
         <div class="form-group col-md-6">
           <label > Current Logo</label>
           <div class="form-group col-md-12">
-            <img  src="../../../assets/image/IL.png" style="width: 100px; height: 100px;" />
+            <img *ngFor="let url of headerModel" [src]="url.logoImageName" style="width: 100px; height: 100px;" />
             <!-- *ngFor="let url of headerModel" -->
           </div>
         </div>

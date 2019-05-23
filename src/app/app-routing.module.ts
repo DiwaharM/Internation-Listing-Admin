@@ -9,10 +9,14 @@ const routes: Routes = [
       path: 'settings',
       loadChildren: './settings/settings.module#SettingsModule'
     },
-  {
-    path: 'user',
-    loadChildren: './user/user.module#UserModule'
-  }]
+    {
+      path: 'user',
+      loadChildren: './user/user.module#UserModule'
+    },
+    {
+      path: 'category',
+      loadChildren: './category/category.module#CategoryModule'
+    }]
   }
 ];
 

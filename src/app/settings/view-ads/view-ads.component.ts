@@ -23,7 +23,7 @@ export class ViewAdsComponent implements OnInit {
   viewAdsForm: FormGroup;
   adsModel: Ads;
   displayedColumns: string[] = ['adsImageName', 'adsPosition',  'delete'];
-  adsData = [{position: 'Home page'}];
+  adsData;
   message;
   action;
 
@@ -31,21 +31,21 @@ export class ViewAdsComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-    /* this.getAdsDetails(); */
+    this.getAdsDetails();
   }
   createForm() {
     this.viewAdsForm = this.fb.group({
     });
   }
- /*  getAdsDetails() {
+  getAdsDetails() {
     this.settingService.getAds().subscribe(data => {
       this.adsModel = data;
       this.adsData = new MatTableDataSource<PeriodicElement>(data);
     }, err => {
       console.log(err);
     });
-  } */
-/*   deleteAds(elem) {
+  }
+  deleteAds(elem) {
     this.message = 'ADs deleted';
     this.settingService.deleteAds(elem).subscribe(data => {
     this.snackBar.open(this.message, this.action , {
@@ -55,5 +55,5 @@ export class ViewAdsComponent implements OnInit {
   }, err => {
     console.log(err);
   });
-  } */
+  }
 }

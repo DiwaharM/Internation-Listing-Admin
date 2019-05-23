@@ -19,6 +19,7 @@ import { TermsAndUseComponent } from './terms-and-use/terms-and-use.component';
 import { ViewTermsAndUseComponent } from './view-terms-and-use/view-terms-and-use.component';
 import { FaqComponent } from './faq/faq.component';
 import { ViewFaqComponent } from './view-faq/view-faq.component';
+import { EditfaqComponent } from './editfaq/editfaq.component';
 
 const routes: Routes = [
   {
@@ -96,6 +97,10 @@ const routes: Routes = [
   {
     path:  'viewfaq',
     component: ViewFaqComponent
+  },
+  {
+    path: 'editfaq/:id',
+    component: EditfaqComponent
   }
 ];
 

@@ -8,6 +8,7 @@ import { MatSnackBar } from '@angular/material';
 import { SettingsService } from '../settings.service';
 import {Footer} from '../footer/footer.model';
 import {LogoImageData} from '../footer/footerImageData.model';
+import { identity } from 'rxjs';
 
 @Component({
   selector: 'app-view-footer',
@@ -15,8 +16,7 @@ import {LogoImageData} from '../footer/footerImageData.model';
   styleUrls: ['./view-footer.component.css']
 })
 export class ViewFooterComponent implements OnInit {
-  footerModel = [{address: '56,kuttanahalli, bangalore', contactNo: '9765483423', alternativeContactNo: '9746738372',
-                  mailId: 'listing@gmail.com', instagramLink: ''}];
+  footerModel;
   footerAddModel: Footer;
   footerEditForm: FormGroup;
   footerForm: FormGroup;
@@ -33,7 +33,7 @@ export class ViewFooterComponent implements OnInit {
 
 
   ngOnInit() {
-    /* this.getFooterDetails(); */
+    this.getFooterDetails();
     this.createForm();
   }
   createForm() {
@@ -52,12 +52,12 @@ export class ViewFooterComponent implements OnInit {
       mailId: [''],
     });
   }
-/* getFooterDetails () {
+getFooterDetails() {
   this.settingService.getFooterDetails().subscribe(data => {
     this.footerModel = data;
     console.log(data);
   });
-} */
+}
 editAddress(data) {
   data.detailsUpdate = true;
 }
@@ -65,7 +65,7 @@ cancelDetails(data) {
   data.detailsUpdate = false;
 }
 
-/* updateDetails(id, address, contactNo, alternativeContactNo, mailId, map ) {
+updateDetails(id, address, contactNo, alternativeContactNo, mailId, map ) {
   this.message = 'Details updated';
   const str =  this.footerModel[0].logoImageName;
   const imageName = str.substring(str.lastIndexOf('/') + 1);
@@ -87,11 +87,11 @@ cancelDetails(data) {
     });
     this.footerModel = data;
   });
-} */
+}
 editSocialMedia(data) {
   data.socialUpdate = true;
 }
-/* updateSocialDetails(id , instagramLink , facebookLink , pintrestLink, googlePlusLink,  twitterLink ) {
+updateSocialDetails(id , instagramLink , facebookLink , pintrestLink, googlePlusLink,  twitterLink ) {
   this.message = 'Social Media Links updated';
   const str =  this.footerModel[0].logoImageName;
   const imageName = str.substring(str.lastIndexOf('/') + 1);
@@ -113,7 +113,7 @@ editSocialMedia(data) {
     });
     this.footerModel = data;
   });
- } */
+ }
  cancelSocialDetails(data) {
   data.socialUpdate = false;
  }
@@ -138,21 +138,22 @@ editSocialMedia(data) {
 cancelLogo(data) {
   data.logoUpdate = false;
 }
-/* updateLogo(id) {
+updateLogo(id) {
   this.message = 'Logo updated';
   const formData: any = new FormData();
   this.fileLength = this.fileToUpload.length;
   for (let i = 0; i <= this.fileLength; i++) {
     formData.append('uploads[]', this.fileToUpload[i]);
   }
-  this.settingService.uploadLogo(formData, id).subscribe(data => {
+  this.settingService.uploadFooterLogo(formData, id).subscribe(data => {
     this.snackBar.open(this.message, this.action, {
       duration: 2000,
     });
+    this.getFooterDetails();
   }, error => {
     console.log(error);
   });
 
-} */
+}
 
 }

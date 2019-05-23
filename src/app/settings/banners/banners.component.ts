@@ -74,7 +74,7 @@ this.showImageNameError = true;
     }
   }
   addBanners() {
-    /* this.message = 'Banners added';
+    this.message = 'Banners added';
     const formData: any = new FormData();
     this.fileLength = this.fileToUpload.length;
     for (let i = 0; i <= this.fileLength; i++) {
@@ -87,6 +87,6 @@ this.showImageNameError = true;
       this.router.navigate(['settings/viewbanners']);
     }, error => {
       console.log(error);
-    }); */
+    });
   }
 }

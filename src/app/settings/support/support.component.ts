@@ -30,13 +30,14 @@ export class SupportComponent implements OnInit {
   }
 
   addSupportDetail() {
-  /*   this.supportModel = new Support();
+    this.supportModel = new Support();
     this.supportModel.emailId = this.supportForm.controls.emailId.value;
     this.supportModel.openTimings = this.supportForm.controls.openTimings.value;
     this.supportModel.whatsappNumber = this.supportForm.controls.whatsappNumber.value;
     this.settingService.addSupport(this.supportModel).subscribe(data => {
+      this.router.navigate(['settings/viewsupport']);
     }, err => {
       console.log(err);
-    }); */
+    });
       }
 }

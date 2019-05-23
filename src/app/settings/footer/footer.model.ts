@@ -6,8 +6,8 @@ export class Footer {
     googlePlusLink: string;
     twitterLink: string;
     map: string;
-    contactNo: number;
-    alternativeContactNo: number;
+    contactNo: string;
+    alternativeContactNo: string;
     logoImageName: string;
     mailId: string;
     detailsUpdate: boolean;

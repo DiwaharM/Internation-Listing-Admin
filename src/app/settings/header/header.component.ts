@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-   /*  this.getHeader(); */
+    this.getHeader();
   }
   createForm() {
     this.headerForm = this.fb.group({
@@ -55,7 +55,7 @@ export class HeaderComponent implements OnInit {
     }
   }
   addTemplate() {
-    /* this.message = 'Logo  added';
+    this.message = 'Logo  added';
     const formData: any = new FormData();
     this.fileLength = this.fileToUpload.length;
     for (let i = 0; i <= this.fileLength; i++) {
@@ -68,13 +68,13 @@ export class HeaderComponent implements OnInit {
       });
     }, error => {
       console.log(error);
-    }); */
+    });
   }
   getHeader() {
-    /* this.settingService.getHeaderDetails().subscribe(data => {
+    this.settingService.getHeaderDetails().subscribe(data => {
       this.headerModel = data;
     }, error => {
       console.log(error);
-    }); */
+    });
   }
 }

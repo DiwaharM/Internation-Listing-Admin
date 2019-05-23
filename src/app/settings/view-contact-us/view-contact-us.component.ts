@@ -14,7 +14,7 @@ import {ContactUs} from '../contact-us/contact-us.model';
   styleUrls: ['./view-contact-us.component.css']
 })
 export class ViewContactUsComponent implements OnInit {
-  contactModel = [{contactNumber: 9756342312, emailId: 'suresh@gmail.com', address: ' 68, StarStreet, chennai-97'}];
+  contactModel;
   contactAddModel: ContactUs;
   contactEditForm: FormGroup;
   contactForm: FormGroup;
@@ -24,29 +24,29 @@ export class ViewContactUsComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-   /*  this.getContactDetails(); */
+    this.getContactDetails();
   }
   createForm() {
     this.contactEditForm = this.fb.group({
       id: [''],
-      contactNumber: [''],
+      phoneNumber: [''],
       emailId: [''],
       address: [''],
     });
   }
 
-  /* getContactDetails () {
+  getContactDetails() {
     this.settingService.getContactDetails().subscribe(data => {
       this.contactModel = data;
     });
-  } */
+  }
   editAddress(data) {
     data.detailsUpdate = true;
   }
   cancelDetails(data) {
     data.detailsUpdate = false;
   }
-/*   updateDetails(id, phno, mailid, address) {
+  updateDetails(id, phno, mailid, address) {
     this.message = 'Details updated';
     this.contactAddModel = new ContactUs();
     this.contactAddModel.phoneNumber = phno;
@@ -58,6 +58,13 @@ export class ViewContactUsComponent implements OnInit {
       });
       this.contactModel = data;
     });
-  } */
-
+  }
+  deleteContact(data) {
+    this.settingService.deleteContact(data._id).subscribe(val => {
+      this.contactAddModel = val;
+      this.getContactDetails();
+    }, err => {
+      console.log(err);
+    });
+  }
 }
