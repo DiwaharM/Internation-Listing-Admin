@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { NavSidebarComponent } from './shared/nav-sidebar/nav-sidebar.component';
 const routes: Routes = [
   {
+     path: '', redirectTo: 'account/login', pathMatch: 'full'
+  },
+  {
     path: '',
     component: NavSidebarComponent,
     children: [{
@@ -17,6 +20,10 @@ const routes: Routes = [
       path: 'category',
       loadChildren: './category/category.module#CategoryModule'
     }]
+  },
+  {
+    path: 'account',
+    loadChildren: './account/account.module#AccountModule'
   }
 ];
 

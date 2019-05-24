@@ -45,8 +45,22 @@ export class SuperCategoryComponent implements OnInit {
       id: [''],
       categoryName: ['', Validators.required],
       description: [''],
-      editCategory: ['']
+      editCategory: [''],
+      keyWord: this.fb.array([])
     });
+    this.addkeywordForm();
+  }
+  addkeywordForm() {
+    const keyWord = this.fb.group({
+      key: ['']
+    });
+    this.KeyWordForms.push(keyWord);
+  }
+  get KeyWordForms() {
+    return this.superCategoryForm.get('keyWord') as FormArray;
+  }
+  deleteKeyWord(i) {
+    this.KeyWordForms.removeAt(i);
   }
   getSuperCategory() {
     this.categoryService.getSuperCategory().subscribe(data => {
@@ -75,16 +89,16 @@ export class SuperCategoryComponent implements OnInit {
       this.imageError = true;
     } else {
       this.imageError = false;
-      this.superCategoryModel = new SuperCategory(
-        this.superCategoryForm.controls.categoryName.value,
-        this.superCategoryForm.controls.description.value,
-      );
+      this.superCategoryModel = new SuperCategory();
+      this.superCategoryModel.categoryName = this.superCategoryForm.controls.categoryName.value,
+      this.superCategoryModel.categoryDescription = this.superCategoryForm.controls.description.value,
+      this.superCategoryModel.keyWord = this.superCategoryForm.controls.keyWord.value,
       this.categoryService.addSuperCategory(this.superCategoryModel).subscribe(data => {
         this.superCategoryFilter = data;
         this.superCategoryData = new MatTableDataSource<PeriodicElement>(data);
         this.savedLength = data.length - 1;
         this.savedCategory = data[this.savedLength];
-        console.log(this.savedCategory._id);
+        /* console.log(this.savedCategory._id); */
         this.uploadImages(this.savedCategory._id);
       });
       this.superCategoryForm.reset();
