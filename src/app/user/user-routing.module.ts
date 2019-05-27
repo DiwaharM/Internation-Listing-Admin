@@ -14,7 +14,7 @@ const routes: Routes = [
     component: BusinessUserComponent
   },
   {
-    path: 'viewBusinessUser',
+    path: 'viewBusinessUser/:id',
     component: ViewBusinessUserComponent
   }
 ];

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
@@ -16,10 +16,7 @@ import { BusinessImageData } from './businessImageData.model';
   styleUrls: ['./view-business-user.component.css']
 })
 export class ViewBusinessUserComponent implements OnInit {
-  businessUserModel = [{firstName: 'Sharwin' , lastName: 'Aadhithya', companyName: 'Google', country: 'India',
-                        emailId: 'sharwin@gmail.com', mobileNumber: 4353434324, packageDetails: '6 Month', listingCompanyName: 'Goolge',
-                        listingCountry: 'India', listingEmailId: 'sharwin@gmail.com', listingMobileNumber: '4545454545',
-                        webLink: 'www.google.com', category: 'Listing'  }];
+  businessUserModel;
   /* footerAddModel: BusinessUser; */
   businessViewForm: FormGroup;
   /* footerForm: FormGroup; */
@@ -32,13 +29,20 @@ export class ViewBusinessUserComponent implements OnInit {
 
   reader: FileReader = new FileReader();
   logoImageData: BusinessImageData = new BusinessImageData();
+  id: string;
+  packageValue: any;
   constructor(private fb: FormBuilder, private router: Router, private userService: UserService,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar, private route: ActivatedRoute) {
+                this.route.paramMap.subscribe((params: ParamMap) => {
+                  this.id = params.get('id');
+                });
+               }
 
 
   ngOnInit() {
     /* this.getFooterDetails(); */
     this.createForm();
+    this.getSelectedBusinessUser();
   }
   createForm() {
     this.businessViewForm = this.fb.group({
@@ -162,5 +166,15 @@ cancelLogo(data) {
   });
 
 } */
+getSelectedBusinessUser() {
+  this.userService.getSelectedBusinessUser(this.id).subscribe(data => {
+    
+    this.businessUserModel = data;
+    this.packageValue = data[0].packageDetails;
+    console.log( this.businessUserModel);
+  }, error => {
+    console.log(error);
+  });
+}
 
 }

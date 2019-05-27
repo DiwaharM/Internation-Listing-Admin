@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 import { BusinessUser } from './business-user.model';
 import { UserService } from '../user.service';
+import { concat } from 'rxjs';
 
 @Component({
   selector: 'app-business-user',
@@ -14,13 +15,13 @@ export class BusinessUserComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   displayedColumns: string[] = ['firstName', 'companyName', 'emailId', 'mobileNumber'];
   businessDetails: BusinessUser[];
-  businessData = [{firstName: 'Sharwin' , lastName: 'Aadhithya', companyName: 'Google', country: 'India',
-  emailId: 'sharwin@gmail.com', mobileNumber: 9876548383}];
+  businessData;
 
   constructor(private router: Router, private userservice: UserService) { }
 
   ngOnInit() {
     /* this.viewCustomers(); */
+    this.getBusinessUser();
   }
   /* viewCustomers() {
     this.customerService.getAllCustomers().subscribe(data => {
@@ -34,10 +35,19 @@ export class BusinessUserComponent implements OnInit {
     });
   } */
   showOrderDetails(e) {
-    this.router.navigate(['user/viewBusinessUser']);
+   /*  console.log(e); */
+    this.router.navigate(['user/viewBusinessUser/', e._id]);
   }
   applyFilter(e) {
     
+  }
+  getBusinessUser() {
+    this.userservice.getBusinessUser().subscribe(data => {
+    /*   console.log(data); */
+      this.businessData = data;
+    }, error => {
+      console.log(error);
+    });
   }
 }
 
