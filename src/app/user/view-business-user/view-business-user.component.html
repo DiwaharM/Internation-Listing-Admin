@@ -127,7 +127,9 @@
     <div class="row pageBoxl">
            <div class="col-md-5" *ngFor="let data of businessUserModel">
         <div *ngIf="!data.logoUpdate">
-            <label>Logo </label>
+            <label>Logo </label><button mat-icon-button mat-sm-button color="primary" matTooltip="Edit  Logo" (click)="editLogo(data)">
+              <mat-icon> edit </mat-icon>
+            </button>
             <div>
               <img [src]="data.logImageName" style="width: 150px; height: 150px;" />
             </div>

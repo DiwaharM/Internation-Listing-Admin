@@ -1,4 +1,5 @@
 export class BusinessUser {
+   _id: string;
    firstName: string;
    lastName: string;
    companyName: string;

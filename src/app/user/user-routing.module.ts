@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PublicUserComponent  } from './public-user/public-user.component';
 import { BusinessUserComponent } from './business-user/business-user.component';
 import { ViewBusinessUserComponent } from './view-business-user/view-business-user.component';
+import { ReviewComponent } from './review/review.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'viewBusinessUser/:id',
     component: ViewBusinessUserComponent
+  },
+  {
+    path: 'review',
+    component: ReviewComponent
   }
 ];
 

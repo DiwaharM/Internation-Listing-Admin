@@ -150,14 +150,14 @@ editSocialMedia(data) {
 cancelLogo(data) {
   data.logoUpdate = false;
 }
-/* updateLogo(id) {
+updateLogo(id) {
   this.message = 'Logo updated';
   const formData: any = new FormData();
   this.fileLength = this.fileToUpload.length;
   for (let i = 0; i <= this.fileLength; i++) {
     formData.append('uploads[]', this.fileToUpload[i]);
   }
-  this.settingService.uploadLogo(formData, id).subscribe(data => {
+  this.userService.uploadBusinessUserLogo(formData, id).subscribe(data => {
     this.snackBar.open(this.message, this.action, {
       duration: 2000,
     });
@@ -165,7 +165,7 @@ cancelLogo(data) {
     console.log(error);
   });
 
-} */
+}
 getSelectedBusinessUser() {
   this.userService.getSelectedBusinessUser(this.id).subscribe(data => {
     

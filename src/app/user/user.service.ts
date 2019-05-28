@@ -26,4 +26,14 @@ serviceUrl: string = AppSetting.serviceUrl;
     const url: string = this.serviceUrl + addUrl + id;
     return this.http.get<BusinessUser>(url);
   }
+  uploadBusinessUserLogo(data, id): Observable<any> {
+    const addUrl = 'updatebusinessuserlogo/';
+    const url: string = this.serviceUrl + addUrl + id ;
+    return this.http.put<BusinessUser>(url, data);
+  }
+  getReview(): Observable<any> {
+    const addUrl = 'getallreview';
+    const url: string = this.serviceUrl + addUrl;
+    return this.http.get<any>(url);
+  }
 }

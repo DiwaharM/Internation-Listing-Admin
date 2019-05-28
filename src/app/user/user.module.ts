@@ -35,9 +35,10 @@ import {
   MatTableModule
 } from '@angular/material';
 import { ViewBusinessUserComponent } from './view-business-user/view-business-user.component';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
-  declarations: [BusinessUserComponent, PublicUserComponent, ViewBusinessUserComponent],
+  declarations: [BusinessUserComponent, PublicUserComponent, ViewBusinessUserComponent, ReviewComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
