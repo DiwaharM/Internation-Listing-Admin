@@ -8,7 +8,7 @@ import { LogIn } from './login/login.model';
   providedIn: 'root'
 })
 export class AccountService {
-serviceUrl: string = AppSetting.serviceUrl;
+  serviceUrl: string = AppSetting.serviceUrl;
   constructor(private http: HttpClient) { }
 
   Login(data): Observable<any> {

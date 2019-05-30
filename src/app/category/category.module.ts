@@ -34,9 +34,10 @@ import {
 } from '@angular/material';
 import { SuperCategoryComponent } from './super-category/super-category.component';
 import { MainCategoryComponent } from './main-category/main-category.component';
+import { KeywordComponent } from './keyword/keyword.component';
 
 @NgModule({
-  declarations: [SuperCategoryComponent, MainCategoryComponent],
+  declarations: [SuperCategoryComponent, MainCategoryComponent, KeywordComponent],
   imports: [
     CommonModule,
     CategoryRoutingModule,

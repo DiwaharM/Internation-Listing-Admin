@@ -1,4 +1,4 @@
-import { Component, OnInit , ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 import { PublicUser } from './public-user.model';
@@ -12,7 +12,7 @@ import { UserService } from '../user.service';
 export class PublicUserComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  displayedColumns: string[] = ['userName', 'mobileNumber', 'emailId'];
+  displayedColumns: string[] = ['firstName', 'mobileNumber', 'emailId'];
   publicDetails: PublicUser[];
   publicData;
 
@@ -23,8 +23,8 @@ export class PublicUserComponent implements OnInit {
   }
   viewCustomers() {
     this.userservice.getPublicUser().subscribe(data => {
-  /*    console.log(data); */
-     this.publicData = data;
+      /*    console.log(data); */
+      this.publicData = data;
     }, err => {
       console.log(err);
     });

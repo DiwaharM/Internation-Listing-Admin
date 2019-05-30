@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
 import { SettingsService } from '../settings.service';
-import {ContactUs} from '../contact-us/contact-us.model';
+import { ContactUs } from '../contact-us/contact-us.model';
 
 @Component({
   selector: 'app-view-contact-us',

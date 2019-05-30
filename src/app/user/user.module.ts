@@ -36,9 +36,10 @@ import {
 } from '@angular/material';
 import { ViewBusinessUserComponent } from './view-business-user/view-business-user.component';
 import { ReviewComponent } from './review/review.component';
+import { VisitorReportsComponent } from './visitor-reports/visitor-reports.component';
 
 @NgModule({
-  declarations: [BusinessUserComponent, PublicUserComponent, ViewBusinessUserComponent, ReviewComponent],
+  declarations: [BusinessUserComponent, PublicUserComponent, ViewBusinessUserComponent, ReviewComponent, VisitorReportsComponent],
   imports: [
     CommonModule,
     UserRoutingModule,

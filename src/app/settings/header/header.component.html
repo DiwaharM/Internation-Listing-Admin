@@ -17,7 +17,7 @@
             [disabled]='!headerForm.valid'>Save</button>
         </div>
         <div class="form-group col-md-6">
-          <label > Current Logo</label>
+          <label> Current Logo</label>
           <div class="form-group col-md-12">
             <img *ngFor="let url of headerModel" [src]="url.logoImageName" style="width: 100px; height: 100px;" />
             <!-- *ngFor="let url of headerModel" -->

@@ -1,4 +1,4 @@
-import { Component, OnInit , ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 import { BusinessUser } from './business-user.model';
@@ -35,15 +35,15 @@ export class BusinessUserComponent implements OnInit {
     });
   } */
   showOrderDetails(e) {
-   /*  console.log(e); */
+    /*  console.log(e); */
     this.router.navigate(['user/viewBusinessUser/', e._id]);
   }
   applyFilter(e) {
-    
+
   }
   getBusinessUser() {
     this.userservice.getBusinessUser().subscribe(data => {
-    /*   console.log(data); */
+      /*   console.log(data); */
       this.businessData = data;
     }, error => {
       console.log(error);

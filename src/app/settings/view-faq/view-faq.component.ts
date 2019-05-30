@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
-import {FAQ} from '../faq/faq.model';
+import { FAQ } from '../faq/faq.model';
 import { MatSnackBar } from '@angular/material';
 
 import { SettingsService } from '../settings.service';
@@ -37,8 +37,8 @@ export class ViewFaqComponent implements OnInit {
       this.snackBar.open(this.message, this.action, {
         duration: 2000
       });
- }, err => {
-   console.log(err);
- });
+    }, err => {
+      console.log(err);
+    });
   }
 }

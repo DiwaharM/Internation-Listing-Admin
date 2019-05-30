@@ -8,85 +8,96 @@
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
-      <mat-accordion multi="true" >
-          <mat-expansion-panel class="no-shadow">
-              <mat-expansion-panel-header fxLayout="row" >
-                <mat-panel-title>
-                Category
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <mat-nav-list class="ml-0" dense>
-      <mat-list-item  routerLink="/category/supercategory">
-                    <a>Super Category</a>
-                  </mat-list-item>
-              </mat-nav-list>
-              <mat-nav-list class="ml-0" dense>
-                <mat-list-item  routerLink="/category/maincategory">
-                              <a>Main Category</a>
-                            </mat-list-item>
-                        </mat-nav-list>
-            </mat-expansion-panel>
+      <mat-accordion multi="true">
         <mat-expansion-panel class="no-shadow">
-          <mat-expansion-panel-header fxLayout="row" >
+          <mat-expansion-panel-header fxLayout="row">
             <mat-panel-title>
-            User
+              Category
             </mat-panel-title>
           </mat-expansion-panel-header>
           <mat-nav-list class="ml-0" dense>
-  <mat-list-item  routerLink="/user/businessuser">
-                <a>Business Users</a>
-              </mat-list-item>
+            <mat-list-item routerLink="/category/supercategory">
+              <a>Super Category</a>
+            </mat-list-item>
           </mat-nav-list>
           <mat-nav-list class="ml-0" dense>
-            <mat-list-item  routerLink="/user/publicuser">
-                          <a>Public Users</a>
-                        </mat-list-item>
-                    </mat-nav-list>
+            <mat-list-item routerLink="/category/maincategory">
+              <a>Main Category</a>
+            </mat-list-item>
+          </mat-nav-list>
         </mat-expansion-panel>
         <mat-expansion-panel class="no-shadow">
-            <mat-expansion-panel-header fxLayout="row" >
-              <mat-panel-title>
-               Home Page
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-nav-list class="ml-0" dense>
-              <mat-list-item routerLink="/settings/viewbanners">  
-                <a>Banners</a>
-              </mat-list-item>
-              <mat-list-item  routerLink="/settings/viewpromotions">
-                <a>Promotions</a>
-              </mat-list-item>
-              <mat-list-item  routerLink="/settings/viewhotproducts">   <!--ads component used for hot products-->
-                <a>ADs</a>
-              </mat-list-item>
-              <mat-list-item  routerLink="/settings/header"> 
-                <a>Header</a>
-              </mat-list-item>
-              <mat-list-item  routerLink="/settings/viewfooter"> 
-                <a>Footer</a>
-              </mat-list-item>
-            </mat-nav-list>
-          </mat-expansion-panel>
-        <mat-expansion-panel class="no-shadow">
-          <mat-expansion-panel-header fxLayout="row" >
+          <mat-expansion-panel-header fxLayout="row">
             <mat-panel-title>
-             Settings
+              User
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <mat-nav-list class="ml-0" dense>           
-            <mat-list-item  routerLink="/settings/viewtermsanduse"> 
+          <mat-nav-list class="ml-0" dense>
+            <mat-list-item routerLink="/user/businessuser">
+              <a>Business Users</a>
+            </mat-list-item>
+          </mat-nav-list>
+          <mat-nav-list class="ml-0" dense>
+            <mat-list-item routerLink="/user/publicuser">
+              <a>Public Users</a>
+            </mat-list-item>
+          </mat-nav-list>
+          <mat-nav-list class="ml-0" dense>
+            <mat-list-item routerLink="/user/review">
+              <a>Review</a>
+            </mat-list-item>
+          </mat-nav-list>
+          <mat-nav-list class="ml-0" dense>
+            <mat-list-item routerLink="/user/visiterReport">
+              <a>Visitors Report</a>
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="no-shadow">
+          <mat-expansion-panel-header fxLayout="row">
+            <mat-panel-title>
+              Home Page
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list class="ml-0" dense>
+            <mat-list-item routerLink="/settings/viewbanners">
+              <a>Banners</a>
+            </mat-list-item>
+            <mat-list-item routerLink="/settings/viewpromotions">
+              <a>Promotions</a>
+            </mat-list-item>
+            <mat-list-item routerLink="/settings/viewhotproducts">
+              <!--ads component used for hot products-->
+              <a>ADs</a>
+            </mat-list-item>
+            <mat-list-item routerLink="/settings/header">
+              <a>Header</a>
+            </mat-list-item>
+            <mat-list-item routerLink="/settings/viewfooter">
+              <a>Footer</a>
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="no-shadow">
+          <mat-expansion-panel-header fxLayout="row">
+            <mat-panel-title>
+              Settings
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list class="ml-0" dense>
+            <mat-list-item routerLink="/settings/viewtermsanduse">
               <a>Terms and Use</a>
-            </mat-list-item> 
-            <mat-list-item  routerLink="/settings/viewsupport"> 
+            </mat-list-item>
+            <mat-list-item routerLink="/settings/viewsupport">
               <a>Support</a>
             </mat-list-item>
-            <mat-list-item  routerLink="/settings/viewcontactus"> 
+            <mat-list-item routerLink="/settings/viewcontactus">
               <a>Contact Us</a>
             </mat-list-item>
-            <mat-list-item  routerLink="/settings/viewprivacypolicy"> 
+            <mat-list-item routerLink="/settings/viewprivacypolicy">
               <a>Privacy Policy</a>
             </mat-list-item>
-            <mat-list-item  routerLink="/settings/viewfaq"> 
+            <mat-list-item routerLink="/settings/viewfaq">
               <a>FAQ</a>
             </mat-list-item>
           </mat-nav-list>

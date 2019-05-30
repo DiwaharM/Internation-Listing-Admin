@@ -22,16 +22,16 @@ export class CategoryService {
     const url: string = this.serviceUrl + categoryUrl;
     return this.httpClient.post<SuperCategory>(url, data);
   }
-  uploadMainCategoryImages(data, supID,   mainID, mainname): Observable<any> {
+  uploadMainCategoryImages(data, supID, mainID, mainname): Observable<any> {
     const addUrl = 'supercategory/';
     const addUrl1 = '/maincategoryname/';
     const addUrl2 = '/maincategoryid/';
-    const url: string = this.serviceUrl + addUrl + supID + addUrl1 + mainname + addUrl2 + mainID ;
+    const url: string = this.serviceUrl + addUrl + supID + addUrl1 + mainname + addUrl2 + mainID;
     return this.httpClient.put<boolean>(url, data);
   }
   uploadImages(data, categoryName): Observable<any> {
     const addUrl = 'supercategoryimage/';
-    const url: string = this.serviceUrl + addUrl + categoryName ;
+    const url: string = this.serviceUrl + addUrl + categoryName;
     return this.httpClient.put<SuperCategory>(url, data);
   }
   deleteSuperCategory(data): Observable<any> {

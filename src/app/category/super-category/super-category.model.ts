@@ -7,11 +7,11 @@ export class SuperCategory {
     editing: boolean;
     checkCategoryName: boolean;
     keyWord: [Keyword];
-  /*   constructor(
-        categoryName: string,
-        categoryDescription: string
-    ) {
-        this.categoryName = categoryName;
-        this.categoryDescription = categoryDescription;
-    } */
+    /*   constructor(
+          categoryName: string,
+          categoryDescription: string
+      ) {
+          this.categoryName = categoryName;
+          this.categoryDescription = categoryDescription;
+      } */
 }

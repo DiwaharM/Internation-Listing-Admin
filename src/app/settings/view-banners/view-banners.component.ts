@@ -5,8 +5,8 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
-import {Banner} from '../banners/banner.model';
-import {SettingsService} from '../settings.service';
+import { Banner } from '../banners/banner.model';
+import { SettingsService } from '../settings.service';
 
 
 export interface PeriodicElement {
@@ -23,7 +23,7 @@ export interface PeriodicElement {
 export class ViewBannersComponent implements OnInit {
   viewBannerForm: FormGroup;
   bannerModel: Banner;
-  displayedColumns: string[] = ['bannerName', 'bannerPosition',  'delete'];
+  displayedColumns: string[] = ['bannerName', 'bannerPosition', 'delete'];
   bannerData;
   message;
   action;
@@ -34,11 +34,11 @@ export class ViewBannersComponent implements OnInit {
     this.createForm();
     this.getBannerDetails();
   }
-createForm() {
-  this.viewBannerForm = this.fb.group({
+  createForm() {
+    this.viewBannerForm = this.fb.group({
 
-  });
-}
+    });
+  }
   getBannerDetails() {
     this.settingService.getBanners().subscribe(data => {
       this.bannerModel = data;
@@ -48,14 +48,14 @@ createForm() {
     });
   }
   deleteBanners(elem) {
-  this.message = 'Banner deleted';
-  this.settingService.deleteBanner(elem).subscribe(data => {
-  this.snackBar.open(this.message, this.action , {
-    duration: 2000,
-  });
-  this.bannerData = new MatTableDataSource<PeriodicElement>(data);
-}, err => {
-  console.log(err);
-});
-}
+    this.message = 'Banner deleted';
+    this.settingService.deleteBanner(elem).subscribe(data => {
+      this.snackBar.open(this.message, this.action, {
+        duration: 2000,
+      });
+      this.bannerData = new MatTableDataSource<PeriodicElement>(data);
+    }, err => {
+      console.log(err);
+    });
+  }
 }

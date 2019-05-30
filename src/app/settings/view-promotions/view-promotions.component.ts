@@ -5,8 +5,8 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
-import {Promotion} from '../promotions/promotion.model';
-import {SettingsService} from '../settings.service';
+import { Promotion } from '../promotions/promotion.model';
+import { SettingsService } from '../settings.service';
 
 export interface PeriodicElement {
   promotionTitle: string;
@@ -23,8 +23,7 @@ export class ViewPromotionsComponent implements OnInit {
   viewPromotionForm: FormGroup;
   promotinModel: Promotion;
   displayedColumns: string[] = ['promotionTitle', 'promotionPosition', 'products', 'view', 'delete'];
-  promotionData = [{ promotionTitle: 'Featured businesses', position: 'Home Page',
-                     companyId: [{id: 'die3434'}]}];
+  promotionData;
   message;
   action;
 
@@ -33,34 +32,34 @@ export class ViewPromotionsComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-    /* this.getPromotionDetails(); */
+    this.getPromotionDetails();
   }
   createForm() {
     this.viewPromotionForm = this.fb.group({
     });
   }
- /*  getPromotionDetails() {
+  getPromotionDetails() {
     this.settingService.getPromotions().subscribe(data => {
       this.promotinModel = data;
-      console.log('promotions', data);
+      /* console.log('promotions', data); */
       this.promotionData = new MatTableDataSource<PeriodicElement>(data);
     }, err => {
       console.log(err);
     });
-  } */
-  /* deletePromotions(elem) {
+  }
+  deletePromotions(elem) {
     this.message = 'promotion deleted';
     this.settingService.deletePromotions(elem).subscribe(data => {
-    this.promotionData = new MatTableDataSource<PeriodicElement>(data);
-    this.snackBar.open(this.message, this.action, {
-      duration: 2000,
+      this.promotionData = new MatTableDataSource<PeriodicElement>(data);
+      this.snackBar.open(this.message, this.action, {
+        duration: 2000,
+      });
+    }, err => {
+      console.log(err);
     });
-   }, err => {
-     console.log(err);
-   });
-  } */
+  }
   viewPromotions(data) {
-   /*  console.log('single promotions', data); */
+    /*  console.log('single promotions', data); */
     this.router.navigate(['/settings/promotions', data._id]);
   }
 }

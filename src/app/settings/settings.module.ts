@@ -53,7 +53,11 @@ import { FaqComponent } from './faq/faq.component';
 import { ViewFaqComponent } from './view-faq/view-faq.component';
 import { EditfaqComponent } from './editfaq/editfaq.component';
 @NgModule({
-  declarations: [AdsComponent, ViewAdsComponent, BannersComponent, ViewBannersComponent, FooterComponent, ViewFooterComponent, ContactUsComponent, ViewContactUsComponent, PromotionsComponent, ViewPromotionsComponent, SupportComponent, ViewSupportComponent, HeaderComponent, PrivacyPolicyComponent, ViewPrivacyPolicyComponent, TermsAndUseComponent, ViewTermsAndUseComponent, FaqComponent, ViewFaqComponent, EditfaqComponent],
+  declarations: [AdsComponent, ViewAdsComponent, BannersComponent, ViewBannersComponent, FooterComponent,
+                 ViewFooterComponent, ContactUsComponent, ViewContactUsComponent, PromotionsComponent,
+                 ViewPromotionsComponent, SupportComponent, ViewSupportComponent, HeaderComponent,
+                 PrivacyPolicyComponent, ViewPrivacyPolicyComponent, TermsAndUseComponent,
+                 ViewTermsAndUseComponent, FaqComponent, ViewFaqComponent, EditfaqComponent],
   imports: [
     CommonModule,
     SettingsRoutingModule,
@@ -87,8 +91,8 @@ import { EditfaqComponent } from './editfaq/editfaq.component';
     MatTableModule
   ],
   providers:
-   [
-    SettingsService
-   ]
+    [
+      SettingsService
+    ]
 })
 export class SettingsModule { }

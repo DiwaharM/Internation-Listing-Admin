@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SuperCategoryComponent } from './super-category/super-category.component';
 import { MainCategoryComponent } from './main-category/main-category.component';
+import { KeywordComponent } from './keyword/keyword.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'maincategory',
     component: MainCategoryComponent
+  },
+  {
+    path: 'keyword',
+    component: KeywordComponent
   }
 ];
 

@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
 import { SettingsService } from '../settings.service';
-import {Support} from '../support/support.model';
+import { Support } from '../support/support.model';
 
 @Component({
   selector: 'app-view-support',
@@ -57,7 +57,7 @@ export class ViewSupportComponent implements OnInit {
         duration: 2000,
       });
       this.supportModel = data;
-     /*  this.router.navigate(['settings/viewsupport']); */
+      /*  this.router.navigate(['settings/viewsupport']); */
     });
   }
   deleteSupport(data) {

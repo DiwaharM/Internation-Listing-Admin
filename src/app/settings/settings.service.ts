@@ -11,16 +11,18 @@ import { PrivacyPolicy } from '../settings/privacy-policy/privacy-policy.model';
 import { ContactUs } from '../settings/contact-us/contact-us.model';
 import { FAQ } from '../settings/faq/faq.model';
 import { Footer } from '../settings/footer/footer.model';
+import { BusinessUser } from '../../app/user/business-user/business-user.model';
+import { Promotion } from './promotions/promotion.model';
 @Injectable({
   providedIn: 'root'
 })
 export class SettingsService {
-serviceUrl: string = AppSetting.serviceUrl;
+  serviceUrl: string = AppSetting.serviceUrl;
   constructor(private http: HttpClient) { }
 
-  uploadads(data , position): Observable<any> {
+  uploadads(data, position): Observable<any> {
     const addUrl = 'adsforupload/';
-    const url: string = this.serviceUrl + addUrl + position ;
+    const url: string = this.serviceUrl + addUrl + position;
     return this.http.put<boolean>(url, data);
   }
   getAds(): Observable<any> {
@@ -33,9 +35,9 @@ serviceUrl: string = AppSetting.serviceUrl;
     const url: string = this.serviceUrl + addUrl + data._id;
     return this.http.delete<Ads>(url);
   }
-  uploadBanners(data , position): Observable<any> {
+  uploadBanners(data, position): Observable<any> {
     const addUrl = 'bannerforupload/';
-    const url: string = this.serviceUrl + addUrl + position ;
+    const url: string = this.serviceUrl + addUrl + position;
     return this.http.put<boolean>(url, data);
   }
   getBanners(): Observable<any> {
@@ -50,7 +52,7 @@ serviceUrl: string = AppSetting.serviceUrl;
   }
   addLogo(data): Observable<any> {
     const addUrl = 'headerforupload';
-    const url: string = this.serviceUrl + addUrl ;
+    const url: string = this.serviceUrl + addUrl;
     return this.http.post<boolean>(url, data);
   }
   getHeaderDetails(): Observable<any> {
@@ -58,10 +60,10 @@ serviceUrl: string = AppSetting.serviceUrl;
     const url: string = this.serviceUrl + addUrl;
     return this.http.get<Header>(url);
   }
- 
+
   addTerms(data): Observable<any> {
     const addUrl = 'termforupload';
-    const url: string = this.serviceUrl + addUrl ;
+    const url: string = this.serviceUrl + addUrl;
     return this.http.post<boolean>(url, data);
   }
   getTerms(): Observable<any> {
@@ -81,7 +83,7 @@ serviceUrl: string = AppSetting.serviceUrl;
   }
   addSupport(data): Observable<any> {
     const addUrl = 'createsupport';
-    const url: string = this.serviceUrl + addUrl ;
+    const url: string = this.serviceUrl + addUrl;
     return this.http.post<boolean>(url, data);
   }
   getSupportDetails(): Observable<any> {
@@ -101,7 +103,7 @@ serviceUrl: string = AppSetting.serviceUrl;
   }
   addPrivacyPolicy(data): Observable<any> {
     const addUrl = 'createpolicy';
-    const url: string = this.serviceUrl + addUrl ;
+    const url: string = this.serviceUrl + addUrl;
     return this.http.post<boolean>(url, data);
   }
   getPolicyDetails(): Observable<any> {
@@ -121,7 +123,7 @@ serviceUrl: string = AppSetting.serviceUrl;
   }
   addContact(data): Observable<any> {
     const addUrl = 'createcontact';
-    const url: string = this.serviceUrl + addUrl ;
+    const url: string = this.serviceUrl + addUrl;
     return this.http.post<boolean>(url, data);
   }
   getContactDetails(): Observable<any> {
@@ -141,7 +143,7 @@ serviceUrl: string = AppSetting.serviceUrl;
   }
   addFaq(data): Observable<any> {
     const addUrl = 'createfaq';
-    const url: string = this.serviceUrl + addUrl ;
+    const url: string = this.serviceUrl + addUrl;
     return this.http.post<boolean>(url, data);
   }
   getFaqDetails(): Observable<any> {
@@ -166,12 +168,12 @@ serviceUrl: string = AppSetting.serviceUrl;
   }
   addFooterdetails(data): Observable<any> {
     const addUrl = 'footer';
-    const url: string = this.serviceUrl + addUrl ;
+    const url: string = this.serviceUrl + addUrl;
     return this.http.post<boolean>(url, data);
   }
   uploadFooterLogo(data, id): Observable<any> {
     const addUrl = 'createLogoImage/';
-    const url: string = this.serviceUrl + addUrl + id ;
+    const url: string = this.serviceUrl + addUrl + id;
     return this.http.put<Footer>(url, data);
   }
   getFooterDetails(): Observable<any> {
@@ -179,9 +181,29 @@ serviceUrl: string = AppSetting.serviceUrl;
     const url: string = this.serviceUrl + categoryUrl;
     return this.http.get<Footer>(url);
   }
-  updateFooterDetails(data , id): Observable<any> {
+  updateFooterDetails(data, id): Observable<any> {
     const addUrl = 'updatefotterdetails/';
-    const url: string = this.serviceUrl + addUrl + id ;
+    const url: string = this.serviceUrl + addUrl + id;
     return this.http.put<Footer>(url, data);
+  }
+  getBusinessUser(): Observable<any> {
+    const addUrl = 'getbusniessuser';
+    const url: string = this.serviceUrl + addUrl;
+    return this.http.get<BusinessUser>(url);
+  }
+  addPromotion(data): Observable<any> {
+    const footerUrl = 'addpromotions';
+    const url: string = this.serviceUrl + footerUrl;
+    return this.http.post<Promotion>(url, data);
+  }
+  getPromotions(): Observable<any> {
+    const addUrl = 'getpromotions';
+    const url: string = this.serviceUrl + addUrl;
+    return this.http.get<Promotion>(url);
+  }
+  deletePromotions(data): Observable<any> {
+    const addUrl = 'deletepromotion/';
+    const url: string = this.serviceUrl + addUrl + data._id;
+    return this.http.delete<Promotion>(url);
   }
 }

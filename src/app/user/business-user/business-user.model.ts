@@ -1,3 +1,5 @@
+import { PackDetailModel } from './business-package.model';
+import { CustomerLog } from './customerLog.model';
 export class BusinessUser {
    _id: string;
    firstName: string;
@@ -12,7 +14,8 @@ export class BusinessUser {
    listingMobileNumber: string;
    weblink: string;
    category: string;
-   packageDetails: string;
+   packageDetails: [PackDetailModel];
    logImageName: string;
    companyImageName: string;
+   customerLogs: [CustomerLog];
 }

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PublicUserComponent  } from './public-user/public-user.component';
+import { PublicUserComponent } from './public-user/public-user.component';
 import { BusinessUserComponent } from './business-user/business-user.component';
 import { ViewBusinessUserComponent } from './view-business-user/view-business-user.component';
 import { ReviewComponent } from './review/review.component';
+import { VisitorReportsComponent } from './visitor-reports/visitor-reports.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'review',
     component: ReviewComponent
+  },
+  {
+    path: 'visiterReport',
+    component: VisitorReportsComponent
   }
 ];
 

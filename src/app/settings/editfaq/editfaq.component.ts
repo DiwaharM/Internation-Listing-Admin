@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
-import {FAQ} from '../faq/faq.model';
+import { FAQ } from '../faq/faq.model';
 import { MatSnackBar } from '@angular/material';
 import { Route, ActivatedRoute, Router } from '@angular/router';
 import { SettingsService } from '../settings.service';
@@ -13,29 +13,28 @@ import { SettingsService } from '../settings.service';
 export class EditfaqComponent implements OnInit {
   id;
   faqModel: any;
-    faqAddModel: FAQ;
-    faqEditForm: FormGroup;
-    message;
-    action;
-    constructor(private router: Router, private settingService: SettingsService, private route: ActivatedRoute,
-                private snackBar: MatSnackBar,
-                private fb: FormBuilder) {
-      this.id = this.route.snapshot.params.id;
-    }
-    ngOnInit() {
-      this.createForm();
-      this.getFAQDetails();
-    }
-   getFAQDetails() {
-     this.settingService.getSingleFaq(this.id).subscribe(data => {
-       this.faqModel = data;
-       this.addNewForm();
-     }, err => {
-       console.log(err);
-     });
+  faqAddModel: FAQ;
+  faqEditForm: FormGroup;
+  message;
+  action;
+  constructor(private router: Router, private settingService: SettingsService, private route: ActivatedRoute,
+              private snackBar: MatSnackBar, private fb: FormBuilder) {
+    this.id = this.route.snapshot.params.id;
+  }
+  ngOnInit() {
+    this.createForm();
+    this.getFAQDetails();
+  }
+  getFAQDetails() {
+    this.settingService.getSingleFaq(this.id).subscribe(data => {
+      this.faqModel = data;
+      this.addNewForm();
+    }, err => {
+      console.log(err);
+    });
 
-   }
-   createForm() {
+  }
+  createForm() {
     this.faqEditForm = this.fb.group({
       id: [''],
       faqHeading: [''],
@@ -79,9 +78,9 @@ export class EditfaqComponent implements OnInit {
       });
       this.faqModel = data;
       this.router.navigate(['settings/viewfaq']);
-   /*    this.cancelPolicy(); */
+      /*    this.cancelPolicy(); */
     }, err => {
       console.log(err);
     });
   }
-  }
+}

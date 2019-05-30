@@ -39,35 +39,35 @@ const routes: Routes = [
     component: ViewBannersComponent
   },
   {
-    path:  'footer',
+    path: 'footer',
     component: FooterComponent
   },
   {
-    path:  'viewfooter',
+    path: 'viewfooter',
     component: ViewFooterComponent
   },
   {
-    path:  'contactus',
+    path: 'contactus',
     component: ContactUsComponent
   },
   {
-    path:  'viewcontactus',
+    path: 'viewcontactus',
     component: ViewContactUsComponent
   },
   {
-    path:  'addpromotions',
+    path: 'addpromotions',
     component: PromotionsComponent
   },
   {
-    path:  'viewpromotions',
+    path: 'viewpromotions',
     component: ViewPromotionsComponent
   },
   {
-    path:  'support',
+    path: 'support',
     component: SupportComponent
   },
   {
-    path:  'viewsupport',
+    path: 'viewsupport',
     component: ViewSupportComponent
   },
   {
@@ -79,23 +79,23 @@ const routes: Routes = [
     component: ViewPrivacyPolicyComponent
   },
   {
-    path:  'privacypolicy',
+    path: 'privacypolicy',
     component: PrivacyPolicyComponent
   },
   {
-    path:  'termsanduse',
+    path: 'termsanduse',
     component: TermsAndUseComponent
   },
   {
-    path:  'viewtermsanduse',
+    path: 'viewtermsanduse',
     component: ViewTermsAndUseComponent
   },
   {
-    path:  'faq',
+    path: 'faq',
     component: FaqComponent
   },
   {
-    path:  'viewfaq',
+    path: 'viewfaq',
     component: ViewFaqComponent
   },
   {

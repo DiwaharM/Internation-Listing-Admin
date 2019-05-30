@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
 import { SettingsService } from '../settings.service';
-import {ContactUs} from './contact-us.model';
+import { ContactUs } from './contact-us.model';
 
 @Component({
   selector: 'app-contact-us',
@@ -38,5 +38,5 @@ export class ContactUsComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-      }
+  }
 }

@@ -1,5 +1,5 @@
 export class PublicUser {
    mobileNumber: string;
    emailId: string;
-   userName: string;
+   firstName: string;
 }

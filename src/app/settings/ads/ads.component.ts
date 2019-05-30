@@ -7,7 +7,7 @@ import { MatSnackBar } from '@angular/material';
 
 import { Ads } from './ads.model';
 import { SettingsService } from '../settings.service';
-import {AdsImageData} from './adsImageData.model';
+import { AdsImageData } from './adsImageData.model';
 /* import {priceValue} from '../../shared/validation/price-validation'; */
 
 @Component({
@@ -34,7 +34,7 @@ export class AdsComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-  /*   this.getAdsDetails(); */
+    /*   this.getAdsDetails(); */
   }
   createForm() {
     this.adsForm = this.fb.group({
@@ -42,13 +42,13 @@ export class AdsComponent implements OnInit {
       position: [''],
     });
   }
- /*  getAdsDetails() {
-    this.settingService.getAds().subscribe(data => {
-      this.adsModel = data;
-    }, err => {
-      console.log(err);
-    });
-  } */
+  /*  getAdsDetails() {
+     this.settingService.getAds().subscribe(data => {
+       this.adsModel = data;
+     }, err => {
+       console.log(err);
+     });
+   } */
   handleFileInput(images: any) {
     this.fileToUpload = images;
     this.adsImageData.adsImage = this.fileToUpload[0];
@@ -68,7 +68,7 @@ export class AdsComponent implements OnInit {
   checkImageName() {
     this.imageNameFilter = this.adsModel.filter(val => val.adsImageName.indexOf(this.adsImageData.adsImage.name) !== -1);
     if (this.imageNameFilter.length !== 0) {
-this.showImageNameError = true;
+      this.showImageNameError = true;
     } else if (this.imageNameFilter.length === 0) {
       this.showImageNameError = false;
     }

@@ -40,7 +40,7 @@ export class MainCategoryComponent implements OnInit {
   savedLength;
   savedCategory: SuperCategory;
   imageError: boolean;
-  displayedColumns: string[] = [ 'categoryName', 'description',  'delete'];
+  displayedColumns: string[] = ['categoryName', 'description', 'delete'];
   constructor(private fb: FormBuilder, private router: Router, private categoryService: CategoryService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
@@ -136,7 +136,7 @@ export class MainCategoryComponent implements OnInit {
       console.log(error);
     });
   }
-  deleteMainCategory(id , name) {
+  deleteMainCategory(id, name) {
     console.log(id);
     console.log(name);
     this.message = 'Main Category deleted';

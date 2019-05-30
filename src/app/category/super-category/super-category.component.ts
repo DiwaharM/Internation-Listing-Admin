@@ -34,7 +34,7 @@ export class SuperCategoryComponent implements OnInit {
   reader: FileReader = new FileReader();
   savedLength;
   savedCategory: SuperCategory;
-  constructor(private fb: FormBuilder, private router: Router, private categoryService: CategoryService ) { }
+  constructor(private fb: FormBuilder, private router: Router, private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.createForm();
@@ -91,16 +91,16 @@ export class SuperCategoryComponent implements OnInit {
       this.imageError = false;
       this.superCategoryModel = new SuperCategory();
       this.superCategoryModel.categoryName = this.superCategoryForm.controls.categoryName.value,
-      this.superCategoryModel.categoryDescription = this.superCategoryForm.controls.description.value,
-      this.superCategoryModel.keyWord = this.superCategoryForm.controls.keyWord.value,
-      this.categoryService.addSuperCategory(this.superCategoryModel).subscribe(data => {
-        this.superCategoryFilter = data;
-        this.superCategoryData = new MatTableDataSource<PeriodicElement>(data);
-        this.savedLength = data.length - 1;
-        this.savedCategory = data[this.savedLength];
-        /* console.log(this.savedCategory._id); */
-        this.uploadImages(this.savedCategory._id);
-      });
+        this.superCategoryModel.categoryDescription = this.superCategoryForm.controls.description.value,
+        this.superCategoryModel.keyWord = this.superCategoryForm.controls.keyWord.value,
+        this.categoryService.addSuperCategory(this.superCategoryModel).subscribe(data => {
+          this.superCategoryFilter = data;
+          this.superCategoryData = new MatTableDataSource<PeriodicElement>(data);
+          this.savedLength = data.length - 1;
+          this.savedCategory = data[this.savedLength];
+          /* console.log(this.savedCategory._id); */
+          this.uploadImages(this.savedCategory._id);
+        });
       this.superCategoryForm.reset();
     }
   }
@@ -126,7 +126,7 @@ export class SuperCategoryComponent implements OnInit {
   }
   categoryVerify(val) {
     this.superCategoryFilter.forEach(element => {
-      if (element.categoryName === val ) {
+      if (element.categoryName === val) {
         element.checkCategoryName = true;
         this.checKCategoryName = true;
       } else {

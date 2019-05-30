@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
 import { SettingsService } from '../settings.service';
-import {Support} from './support.model';
+import { Support } from './support.model';
 
 @Component({
   selector: 'app-support',
@@ -39,5 +39,5 @@ export class SupportComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-      }
+  }
 }

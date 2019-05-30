@@ -5,8 +5,8 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
-import {Ads} from '../ads/ads.model';
-import {SettingsService} from '../settings.service';
+import { Ads } from '../ads/ads.model';
+import { SettingsService } from '../settings.service';
 
 export interface PeriodicElement {
   adsImageName: string;
@@ -22,7 +22,7 @@ export interface PeriodicElement {
 export class ViewAdsComponent implements OnInit {
   viewAdsForm: FormGroup;
   adsModel: Ads;
-  displayedColumns: string[] = ['adsImageName', 'adsPosition',  'delete'];
+  displayedColumns: string[] = ['adsImageName', 'adsPosition', 'delete'];
   adsData;
   message;
   action;
@@ -48,12 +48,12 @@ export class ViewAdsComponent implements OnInit {
   deleteAds(elem) {
     this.message = 'ADs deleted';
     this.settingService.deleteAds(elem).subscribe(data => {
-    this.snackBar.open(this.message, this.action , {
-      duration: 2000,
+      this.snackBar.open(this.message, this.action, {
+        duration: 2000,
+      });
+      this.adsData = new MatTableDataSource<PeriodicElement>(data);
+    }, err => {
+      console.log(err);
     });
-    this.adsData = new MatTableDataSource<PeriodicElement>(data);
-  }, err => {
-    console.log(err);
-  });
   }
 }

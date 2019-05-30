@@ -5,7 +5,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
-import {PrivacyPolicy} from '../privacy-policy/privacy-policy.model';
+import { PrivacyPolicy } from '../privacy-policy/privacy-policy.model';
 
 import { SettingsService } from '../settings.service';
 
@@ -87,12 +87,12 @@ export class ViewPrivacyPolicyComponent implements OnInit {
       console.log(err);
     });
   }
-/*   deletePolicy(data) {
-    this.settingService.deletePolicy(data._id).subscribe(val => {
-      this.privacyAddModel = val;
-      this.getPolicyDetails();
-    }, err => {
-      console.log(err);
-    });
-  } */
+  /*   deletePolicy(data) {
+      this.settingService.deletePolicy(data._id).subscribe(val => {
+        this.privacyAddModel = val;
+        this.getPolicyDetails();
+      }, err => {
+        console.log(err);
+      });
+    } */
 }

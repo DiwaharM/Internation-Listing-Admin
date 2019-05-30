@@ -33,7 +33,7 @@ export class BannersComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-   /*  this.getBannersDetails(); */
+    /*  this.getBannersDetails(); */
   }
   createForm() {
     this.bannerForm = this.fb.group({
@@ -42,13 +42,13 @@ export class BannersComponent implements OnInit {
       position: ['']
     });
   }
- /*  getBannersDetails() {
-    this.settingService.getBanners().subscribe(data => {
-      this.bannerModel = data;
-    }, err => {
-      console.log(err);
-    });
-  } */
+  /*  getBannersDetails() {
+     this.settingService.getBanners().subscribe(data => {
+       this.bannerModel = data;
+     }, err => {
+       console.log(err);
+     });
+   } */
   handleFileInput(images: any) {
     this.fileToUpload = images;
     this.bannerImageData.bannerImage = this.fileToUpload[0];
@@ -68,7 +68,7 @@ export class BannersComponent implements OnInit {
   checkImageName() {
     this.imageNameFilter = this.bannerModel.filter(val => val.bannerImage.indexOf(this.bannerImageData.bannerImage.name) !== -1);
     if (this.imageNameFilter.length !== 0) {
-this.showImageNameError = true;
+      this.showImageNameError = true;
     } else if (this.imageNameFilter.length === 0) {
       this.showImageNameError = false;
     }

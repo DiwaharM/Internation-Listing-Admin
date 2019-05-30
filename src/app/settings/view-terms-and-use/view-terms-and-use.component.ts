@@ -5,7 +5,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
-import {TermsUse} from '../terms-and-use/termsuse.model';
+import { TermsUse } from '../terms-and-use/termsuse.model';
 
 import { SettingsService } from '../settings.service';
 
@@ -38,7 +38,7 @@ export class ViewTermsAndUseComponent implements OnInit {
   getTerms() {
     this.settingService.getTerms().subscribe(data => {
       this.termsModel = data;
-  /*     console.log(data); */
+      /*     console.log(data); */
     }, err => {
       console.log(err);
     });
