@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   LogInForm: FormGroup;
   loginValue: LogIn;
   loginFaild = false;
+  pwdError = false;
   constructor(private fb: FormBuilder, private accountService: AccountService,
               private router: Router) { }
 
@@ -31,11 +32,13 @@ export class LoginComponent implements OnInit {
     this.loginValue.password = LogInForm.controls.password.value;
     this.accountService.Login(this.loginValue).subscribe(data => {
       if (data.length !== 0) {
+        this.pwdError = true;
         this.router.navigate(['navside']);
       } else {
         this.loginFaild = true;
       }
     }, error => {
+      this.pwdError = false;
       this.loginFaild = true;
       console.log(error);
     });

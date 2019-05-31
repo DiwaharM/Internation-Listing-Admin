@@ -1,4 +1,4 @@
-import { Keyword } from './keywords.model';
+/* import { Keyword } from './keywords.model'; */
 export class SuperCategory {
     _id: string;
     categoryName: string;
@@ -6,7 +6,7 @@ export class SuperCategory {
     categoryImageName: string;
     editing: boolean;
     checkCategoryName: boolean;
-    keyWord: [Keyword];
+ /*    keyWord: [Keyword]; */
     /*   constructor(
           categoryName: string,
           categoryDescription: string

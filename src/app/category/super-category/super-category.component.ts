@@ -48,20 +48,20 @@ export class SuperCategoryComponent implements OnInit {
       editCategory: [''],
       keyWord: this.fb.array([])
     });
-    this.addkeywordForm();
+    /* this.addkeywordForm(); */
   }
-  addkeywordForm() {
+/*   addkeywordForm() {
     const keyWord = this.fb.group({
       key: ['']
     });
     this.KeyWordForms.push(keyWord);
-  }
-  get KeyWordForms() {
+  } */
+  /* get KeyWordForms() {
     return this.superCategoryForm.get('keyWord') as FormArray;
-  }
-  deleteKeyWord(i) {
+  } */
+  /* deleteKeyWord(i) {
     this.KeyWordForms.removeAt(i);
-  }
+  } */
   getSuperCategory() {
     this.categoryService.getSuperCategory().subscribe(data => {
       this.superCategoryModel = data;
@@ -92,7 +92,7 @@ export class SuperCategoryComponent implements OnInit {
       this.superCategoryModel = new SuperCategory();
       this.superCategoryModel.categoryName = this.superCategoryForm.controls.categoryName.value,
         this.superCategoryModel.categoryDescription = this.superCategoryForm.controls.description.value,
-        this.superCategoryModel.keyWord = this.superCategoryForm.controls.keyWord.value,
+       /*  this.superCategoryModel.keyWord = this.superCategoryForm.controls.keyWord.value, */
         this.categoryService.addSuperCategory(this.superCategoryModel).subscribe(data => {
           this.superCategoryFilter = data;
           this.superCategoryData = new MatTableDataSource<PeriodicElement>(data);
