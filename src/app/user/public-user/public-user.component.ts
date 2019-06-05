@@ -25,6 +25,9 @@ export class PublicUserComponent implements OnInit {
     this.userservice.getPublicUser().subscribe(data => {
       /*    console.log(data); */
       this.publicData = data;
+      this.publicData = new MatTableDataSource<PublicUser>(data);
+      this.publicData.sort = this.sort;
+      this.publicData.paginator = this.paginator;
     }, err => {
       console.log(err);
     });

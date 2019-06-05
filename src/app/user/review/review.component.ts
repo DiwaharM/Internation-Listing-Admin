@@ -22,6 +22,9 @@ export class ReviewComponent implements OnInit {
   getAllReview() {
     this.userservice.getReview().subscribe(data => {
       this.reviewData = data;
+      this.reviewData = new MatTableDataSource<any>(data);
+      this.reviewData.sort = this.sort;
+      this.reviewData.paginator = this.paginator;
     }, error => {
       console.log(error);
     });

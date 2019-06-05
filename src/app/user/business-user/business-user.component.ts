@@ -45,6 +45,9 @@ export class BusinessUserComponent implements OnInit {
     this.userservice.getBusinessUser().subscribe(data => {
       /*   console.log(data); */
       this.businessData = data;
+      this.businessData = new MatTableDataSource<BusinessUser>(data);
+      this.businessData.sort = this.sort;
+      this.businessData.paginator = this.paginator;
     }, error => {
       console.log(error);
     });
