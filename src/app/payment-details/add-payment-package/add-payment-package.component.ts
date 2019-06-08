@@ -13,7 +13,7 @@ import { PaymentDetailsService } from '../payment-details.service';
 export class AddPaymentPackageComponent implements OnInit {
   PaymentForm: FormGroup;
   paymentModel: PaymentPackage;
-  constructor(private paymentDetailsSerivce: PaymentDetailsService, private router: Router, 
+  constructor(private paymentDetailsSerivce: PaymentDetailsService, private router: Router,
               private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -35,9 +35,12 @@ export class AddPaymentPackageComponent implements OnInit {
     this.paymentModel.grade = PaymentForm.controls.grade.value;
     this.paymentModel.description = PaymentForm.controls.description.value;
     this.paymentDetailsSerivce.createPaymentDetail(this.paymentModel).subscribe(data => {
-      console.log(data);
+      this.router.navigate(['payment/viewPaymentPackage']);
     }, error => {
       console.log(error);
     });
+  }
+  Cancel() {
+    this.router.navigate(['payment/viewPaymentPackage']);
   }
 }

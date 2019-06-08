@@ -19,7 +19,11 @@ const routes: Routes = [
     {
       path: 'category',
       loadChildren: './category/category.module#CategoryModule'
-    }]
+    },
+  {
+    path: 'payment',
+    loadChildren: './payment-details/payment-details.module#PaymentDetailsModule'
+  }]
   },
   {
     path: 'account',

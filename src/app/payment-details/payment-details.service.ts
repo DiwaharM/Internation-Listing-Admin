@@ -17,4 +17,24 @@ export class PaymentDetailsService {
     const url: string = this.serviceUrl + addUrl;
     return this.http.post<PaymentPackage>(url, data);
   }
+  getAllPaymentPackage(): Observable<any> {
+    const addUrl = 'getallpayment';
+    const url: string = this.serviceUrl + addUrl;
+    return this.http.get<PaymentPackage>(url);
+  }
+  getSinglePaymentPackage(id): Observable<any> {
+    const addUrl = 'singlepayment/';
+    const url: string = this.serviceUrl + addUrl + id;
+    return this.http.get<PaymentPackage>(url);
+  }
+  updatePaymentPackage(data ,id): Observable<any> {
+    const addUrl = 'updatepayment/';
+    const url: string = this.serviceUrl + addUrl + id;
+    return this.http.put<PaymentPackage>(url, data);
+  }
+  deletePaymentPackage(id): Observable<any> {
+    const addUrl = 'deletepayment/';
+    const url: string = this.serviceUrl + addUrl + id;
+    return this.http.delete<PaymentPackage>(url);
+  }
 }

@@ -33,9 +33,10 @@ import {
 import { PaymentDetailsRoutingModule } from './payment-details-routing.module';
 import { AddPaymentPackageComponent } from './add-payment-package/add-payment-package.component';
 import { ViewPaymentPackageComponent } from './view-payment-package/view-payment-package.component';
+import { EditPaymentPackageComponent } from './edit-payment-package/edit-payment-package.component';
 
 @NgModule({
-  declarations: [AddPaymentPackageComponent, ViewPaymentPackageComponent],
+  declarations: [AddPaymentPackageComponent, ViewPaymentPackageComponent, EditPaymentPackageComponent],
   imports: [
     CommonModule,
     PaymentDetailsRoutingModule,

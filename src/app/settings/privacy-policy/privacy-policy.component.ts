@@ -14,7 +14,8 @@ import { SettingsService } from '../settings.service';
 export class PrivacyPolicyComponent implements OnInit {
   privacyForm: FormGroup;
   privacyModel: PrivacyPolicy;
-  constructor(private fb: FormBuilder, private router: Router, private settingService: SettingsService, private snackBar: MatSnackBar) { }
+  constructor(private fb: FormBuilder, private router: Router, private settingService: SettingsService,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.createForm();
