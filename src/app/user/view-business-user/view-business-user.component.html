@@ -98,6 +98,12 @@
             <div class="form-group col-md-12">
               <label> <small>Amount</small> </label>
             </div>
+            <div class="form-group col-md-12">
+                <label> <small>Starting Date</small> </label>
+              </div>
+              <div class="form-group col-md-12">
+                  <label> <small>Closing Date</small> </label>
+                </div>
           </div>
           <div class="col-md-6" *ngFor="let data of packageValue">
             <div *ngIf="data.socialUpdate">
@@ -119,6 +125,12 @@
               <div class="form-group col-md-12">
                 <b><small>: {{data.amount}}</small></b>
               </div>
+              <div class="form-group col-md-12">
+                  <b><small>: {{data.startingDate}}</small></b>
+                </div>
+                <div class="form-group col-md-12">
+                  <b><small>: {{data.closingDate}}</small></b>
+                </div>
             </div>
           </div>
         </div>
