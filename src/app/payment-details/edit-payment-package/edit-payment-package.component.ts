@@ -15,6 +15,12 @@ export class EditPaymentPackageComponent implements OnInit {
   EditPaymentForm: FormGroup;
   paymentModel: any;
   temp: PaymentPackage;
+  duration = [
+    { month: '1 month', days: 30 },
+    { month: '6 month', days: 180},
+    { month: '1 year', days: 365}
+  ];
+
   constructor(private paymentDetailsService: PaymentDetailsService, private router: Router,
               private route: ActivatedRoute, private fb: FormBuilder) {
                 this.route.paramMap.subscribe((params: ParamMap) => {

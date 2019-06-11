@@ -8,8 +8,13 @@
 
           <label>Edit Package Details</label>
           <div class="form-group col-md-12">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Duration" [value]="paymentModel.duration" #duration formControlName="duration">
+            <mat-form-field>
+              <mat-select placeholder="Duration" formControlName="duration"  [(ngModel)]="paymentModel.duration"
+                (ngModelChange)="paymentModel.duration=$event">
+                <mat-option *ngFor="let data of duration;let i = index " [value]="data.days" #duration>
+                  <a>{{data.month}}</a>
+                </mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
           <div class="form-group col-md-12">
@@ -28,7 +33,7 @@
             </mat-form-field>
           </div>
           <div>
-            <button mat-raised-button color="accent" type="submit" (click)="editPaymentPackage(duration.value, amount.value, grade.value, description.value)"
+            <button mat-raised-button color="accent" type="submit" (click)="editPaymentPackage(paymentModel.duration, amount.value, grade.value, description.value)"
               [disabled]='!EditPaymentForm.valid'>Save</button>
               <button mat-raised-button color="accent" (click)="Cancel()" type="submit">Cancel</button>
           </div>

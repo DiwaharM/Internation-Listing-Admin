@@ -13,6 +13,12 @@ import { PaymentDetailsService } from '../payment-details.service';
 export class AddPaymentPackageComponent implements OnInit {
   PaymentForm: FormGroup;
   paymentModel: PaymentPackage;
+  duration = [
+    { month: '1 month', days: 30 },
+    { month: '6 month', days: 180},
+    { month: '1 year', days: 365}
+  ];
+
   constructor(private paymentDetailsSerivce: PaymentDetailsService, private router: Router,
               private fb: FormBuilder) { }
 

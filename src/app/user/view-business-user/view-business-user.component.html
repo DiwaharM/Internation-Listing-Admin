@@ -183,9 +183,14 @@
           <label style="align-self: center">Company Image</label>
           <div *ngFor="let url of data.companyImageName" class="column">
             <img [src]="url" style="width: 150px; height: 100px;" />
+
+            <button mat-icon-button mat-sm-button color="primary" matTooltip="Cancel"
+            (click)="cancelSocialDetails(data)">
+            <mat-icon> clear </mat-icon>
+          </button>
           </div>
         </div>
-        <div *ngIf="data.logoUpdate">
+       <!--  <div *ngIf="data.logoUpdate">
           <input matInput hidden [value]="data._id" formControlName="id" #id>
           <label>Logo </label>
           <div>
@@ -204,7 +209,7 @@
               <mat-icon> clear </mat-icon>
             </button>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-5">
         <div class="row" *ngFor="let data of businessUserModel">
