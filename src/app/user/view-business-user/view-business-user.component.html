@@ -126,10 +126,10 @@
                 <b><small>: {{data.amount}}</small></b>
               </div>
               <div class="form-group col-md-12">
-                  <b><small>: {{data.startingDate}}</small></b>
+                  <b><small>: {{data.startingDate | date}}</small></b>
                 </div>
                 <div class="form-group col-md-12">
-                  <b><small>: {{data.closingDate}}</small></b>
+                  <b><small>: {{data.closingDate | date}}</small></b>
                 </div>
             </div>
           </div>
@@ -344,7 +344,7 @@
         </thead>
         <tbody *ngFor="let data of reportModel">
           <tr *ngFor="let val of data.joinedtable">
-            <td scope="row">{{data.date}}</td>
+            <td scope="row">{{data.date | date}}</td>
             <td>{{val.firstName}}</td>
             <td>{{val.mobileNumber}}</td>
             <td>{{val.emailId}}</td>
