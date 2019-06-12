@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
 
@@ -20,24 +20,20 @@ export class ViewContactUsComponent implements OnInit {
   contactForm: FormGroup;
   message;
   action;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  displayedColumns: string[] = ['firstName', 'lastName', 'mobileNumber', 'delete'];
+  publicDetails: ContactUs[];
+  contactData;
+
   constructor(private fb: FormBuilder, private router: Router, private settingService: SettingsService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.createForm();
     this.getContactDetails();
   }
-  createForm() {
-    this.contactEditForm = this.fb.group({
-      id: [''],
-      phoneNumber: [''],
-      emailId: [''],
-      address: [''],
-    });
-  }
-
   getContactDetails() {
     this.settingService.getContactDetails().subscribe(data => {
-      this.contactModel = data;
+      this.contactData = data;
     });
   }
   editAddress(data) {
@@ -46,19 +42,6 @@ export class ViewContactUsComponent implements OnInit {
   cancelDetails(data) {
     data.detailsUpdate = false;
   }
-  updateDetails(id, phno, mailid, address) {
-    this.message = 'Details updated';
-    this.contactAddModel = new ContactUs();
-    this.contactAddModel.phoneNumber = phno;
-    this.contactAddModel.emailId = mailid;
-    this.contactAddModel.address = address;
-    this.settingService.updateContactDetails(this.contactAddModel, id).subscribe(data => {
-      this.snackBar.open(this.message, this.action, {
-        duration: 2000,
-      });
-      this.contactModel = data;
-    });
-  }
   deleteContact(data) {
     this.settingService.deleteContact(data._id).subscribe(val => {
       this.contactAddModel = val;
@@ -66,5 +49,8 @@ export class ViewContactUsComponent implements OnInit {
     }, err => {
       console.log(err);
     });
+  }
+  showOrderDetails(row) {
+    this.router.navigate(['settings/contactus/',row._id]);
   }
 }

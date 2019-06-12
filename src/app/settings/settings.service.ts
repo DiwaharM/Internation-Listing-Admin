@@ -131,6 +131,11 @@ export class SettingsService {
     const url: string = this.serviceUrl + addUrl;
     return this.http.get<ContactUs>(url);
   }
+  getSingleContactDetails(id): Observable<any> {
+    const addUrl = 'getsinglecontact/';
+    const url: string = this.serviceUrl + addUrl + id;
+    return this.http.get<ContactUs>(url);
+  }
   updateContactDetails(data, id): Observable<any> {
     const addUrl = 'updatecontact/';
     const url: string = this.serviceUrl + addUrl + id;

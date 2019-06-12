@@ -47,7 +47,7 @@ const routes: Routes = [
     component: ViewFooterComponent
   },
   {
-    path: 'contactus',
+    path: 'contactus/:id',
     component: ContactUsComponent
   },
   {

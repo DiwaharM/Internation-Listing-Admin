@@ -64,6 +64,7 @@ export class SuperCategoryComponent implements OnInit {
   } */
   getSuperCategory() {
     this.categoryService.getSuperCategory().subscribe(data => {
+      console.log(data);
       this.superCategoryModel = data;
       this.superCategoryFilter = data;
       this.superCategoryData = new MatTableDataSource<PeriodicElement>(data);
@@ -100,6 +101,7 @@ export class SuperCategoryComponent implements OnInit {
           this.savedCategory = data[this.savedLength];
           /* console.log(this.savedCategory._id); */
           this.uploadImages(this.savedCategory._id);
+          this.getSuperCategory();
         });
       this.superCategoryForm.reset();
     }

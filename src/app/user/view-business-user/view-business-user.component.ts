@@ -214,4 +214,15 @@ export class ViewBusinessUserComponent implements OnInit {
       console.log(error);
     });
   }
+  deleteCompanyImage(data, id) {
+    const temp = data.split('/');
+    const first = new BusinessUser();
+    first.companyImageName = temp[7];
+    this.userService.deleteSingleCompanyImage(first, id).subscribe(value => {
+      this.reportModel = value;
+    }, error => {
+      console.log(error);
+    });
+
+  }
 }

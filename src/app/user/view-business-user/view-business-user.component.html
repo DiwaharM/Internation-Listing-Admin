@@ -172,10 +172,10 @@
     <div class="row pageBoxl">
       <div class="col-md-5" *ngFor="let data of businessUserModel">
         <div *ngIf="!data.logoUpdate">
-          <label>Logo </label><button mat-icon-button mat-sm-button color="primary" matTooltip="Edit  Logo"
+          <label>Logo </label><!-- <button mat-icon-button mat-sm-button color="primary" matTooltip="Edit  Logo"
             (click)="editLogo(data)">
             <mat-icon> edit </mat-icon>
-          </button>
+          </button> -->
           <div>
             <img [src]="data.logImageName" style="width: 150px; height: 150px;" />
           </div>
@@ -184,8 +184,8 @@
           <div *ngFor="let url of data.companyImageName" class="column">
             <img [src]="url" style="width: 150px; height: 100px;" />
 
-            <button mat-icon-button mat-sm-button color="primary" matTooltip="Cancel"
-            (click)="cancelSocialDetails(data)">
+            <button mat-icon-button mat-sm-button color="primary" matTooltip="Delete"
+            (click)="deleteCompanyImage(url, data._id)">
             <mat-icon> clear </mat-icon>
           </button>
           </div>

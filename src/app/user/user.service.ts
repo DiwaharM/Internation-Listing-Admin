@@ -46,6 +46,11 @@ export class UserService {
     const url: string = this.serviceUrl + addUrl + id;
     return this.http.get<BusinessUser>(url);
   }
+  deleteSingleCompanyImage(data, id): Observable<any> {
+    const addUrl = 'deletesinglecompnanyimage/';
+    const url: string = this.serviceUrl + addUrl + id;
+    return this.http.post<BusinessUser>(url, data);
+  }
   getSelectedReport(id): Observable<any> {
     const sharedUrl = 'selectedreport/';
     const url: string = this.serviceUrl + sharedUrl + id;

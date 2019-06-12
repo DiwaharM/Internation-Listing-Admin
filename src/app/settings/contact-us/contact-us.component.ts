@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, Route, ParamMap, ActivatedRoute } from '@angular/router';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material';
@@ -16,27 +16,24 @@ import { ContactUs } from './contact-us.model';
 export class ContactUsComponent implements OnInit {
   contactForm: FormGroup;
   contactModel: ContactUs;
-  constructor(private fb: FormBuilder, private router: Router, private settingService: SettingsService, private snackBar: MatSnackBar) { }
+  id: any;
+  holder: any;
+  constructor(private fb: FormBuilder, private router: Router, private settingService: SettingsService,
+              private snackBar: MatSnackBar, private route: ActivatedRoute) {
+                this.route.paramMap.subscribe((params: ParamMap) => {
+                  this.id = params.get('id');
+                });
+              }
 
   ngOnInit() {
-    this.createForm();
+    this.getSelectedContactUs();
   }
-  createForm() {
-    this.contactForm = this.fb.group({
-      phoneNumber: [''],
-      emailId: [''],
-      address: ['']
-    });
-  }
-  addContactDetail() {
-    this.contactModel = new ContactUs();
-    this.contactModel.emailId = this.contactForm.controls.emailId.value;
-    this.contactModel.address = this.contactForm.controls.address.value;
-    this.contactModel.phoneNumber = this.contactForm.controls.phoneNumber.value;
-    this.settingService.addContact(this.contactModel).subscribe(data => {
-      this.router.navigate(['settings/viewcontactus']);
-    }, err => {
-      console.log(err);
+  getSelectedContactUs() {
+    this.settingService.getSingleContactDetails(this.id).subscribe(data => {
+      this.holder = data;
+      console.log(data);
+    }, error => {
+      console.log(error);
     });
   }
 }
