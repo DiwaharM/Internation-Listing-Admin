@@ -53,7 +53,8 @@ export class EditPaymentPackageComponent implements OnInit {
   }
   editPaymentPackage(duration, amount, grade, description) {
     this.temp = new PaymentPackage();
-    this.temp.duration = duration;
+    this.temp.duration = duration.days;
+    this.temp.month = duration.month;
     this.temp.amount = amount;
     this.temp.grade = grade;
     this.temp.description = description;

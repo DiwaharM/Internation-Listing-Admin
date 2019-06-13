@@ -36,7 +36,8 @@ export class AddPaymentPackageComponent implements OnInit {
   }
   addPaymentPackage(PaymentForm: FormGroup) {
     this.paymentModel = new PaymentPackage();
-    this.paymentModel.duration = PaymentForm.controls.duration.value;
+    this.paymentModel.duration = PaymentForm.controls.duration.value.days;
+    this.paymentModel.month = PaymentForm.controls.duration.value.month;
     this.paymentModel.amount = PaymentForm.controls.amount.value;
     this.paymentModel.grade = PaymentForm.controls.grade.value;
     this.paymentModel.description = PaymentForm.controls.description.value;

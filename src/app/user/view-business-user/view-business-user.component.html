@@ -120,7 +120,7 @@
             </div>
             <div *ngIf="!data.socialUpdate">
               <div class="form-group col-md-12">
-                <b><small>: {{packageValue.duration}}</small></b>
+                <b><small>: {{packageValue.month}}</small></b>
               </div>
               <div class="form-group col-md-12">
                 <b><small>: {{packageValue.amount}}</small></b>
@@ -370,7 +370,7 @@
               </thead>
               <tbody *ngFor="let data of packageHistory">
                 <tr>
-                  <td scope="row">{{data.duration}}</td>
+                  <td scope="row">{{data.month}}</td>
                   <td>{{data.amount}}</td>
                   <td>{{data.startingDate | date}}</td>
                   <td>{{data.closingDate | date}}</td>

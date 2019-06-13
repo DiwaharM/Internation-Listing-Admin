@@ -11,7 +11,7 @@
             <mat-form-field>
               <mat-label>Duration</mat-label>
               <mat-select formControlName="duration">
-                <mat-option *ngFor="let data of duration" [value]="data.days">
+                <mat-option *ngFor="let data of duration" [value]="data">
                   {{data.month}}
                 </mat-option>
               </mat-select>

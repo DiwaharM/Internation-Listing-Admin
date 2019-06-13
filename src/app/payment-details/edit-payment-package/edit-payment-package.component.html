@@ -11,7 +11,7 @@
             <mat-form-field>
               <mat-select placeholder="Duration" formControlName="duration"  [(ngModel)]="paymentModel.duration"
                 (ngModelChange)="paymentModel.duration=$event">
-                <mat-option *ngFor="let data of duration;let i = index " [value]="data.days" #duration>
+                <mat-option *ngFor="let data of duration;let i = index " [value]="data" #duration>
                   <a>{{data.month}}</a>
                 </mat-option>
               </mat-select>

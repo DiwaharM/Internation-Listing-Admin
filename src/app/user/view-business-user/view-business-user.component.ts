@@ -181,7 +181,7 @@ export class ViewBusinessUserComponent implements OnInit {
       const v = data[0].packageDetails.length - 1;
       this.packageValue = data[0].packageDetails[v];
       this.packageHistory = data[0].packageDetails;
-      console.log(this.packageHistory);
+      /* console.log(this.packageHistory); */
     }, error => {
       console.log(error);
     });
