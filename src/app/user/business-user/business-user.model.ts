@@ -6,6 +6,7 @@ export class BusinessUser {
    lastName: string;
    companyName: string;
    country: string;
+   listingState: string;
    emailId: string;
    mobileNumber: string;
    listingCompanyName: string;

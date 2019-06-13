@@ -13,7 +13,7 @@ import { concat } from 'rxjs';
 export class BusinessUserComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  displayedColumns: string[] = ['firstName', 'companyName', 'emailId', 'mobileNumber'];
+  displayedColumns: string[] = ['firstName', 'companyName', 'emailId', 'mobileNumber', 'package'];
   businessDetails: BusinessUser[];
   businessData;
 
