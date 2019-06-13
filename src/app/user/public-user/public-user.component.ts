@@ -32,7 +32,7 @@ export class PublicUserComponent implements OnInit {
       console.log(err);
     });
   }
-  applyFilter(e) {
-
+  applyFilter(filterValue: string) {
+    this.publicData.filter = filterValue.trim().toLowerCase();
   }
 }

@@ -29,4 +29,7 @@ export class ReviewComponent implements OnInit {
       console.log(error);
     });
   }
+  applyFilter(filterValue: string) {
+    this.reviewData.filter = filterValue.trim().toLowerCase();
+  }
 }

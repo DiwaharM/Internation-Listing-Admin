@@ -88,7 +88,7 @@
         <div class="row pageBoxl" *ngFor="let data of businessUserModel">
           <div class="form-group col-md-12">
             <div class="form-group">
-              <label> <b>Package Details</b> </label>
+              <label> <b>Current Package Details</b> </label>
             </div>
           </div>
           <div class="col-md-6" *ngIf="!data.socialUpdate">
@@ -105,7 +105,7 @@
                   <label> <small>Closing Date</small> </label>
                 </div>
           </div>
-          <div class="col-md-6" *ngFor="let data of packageValue">
+          <div class="col-md-6" >
             <div *ngIf="data.socialUpdate">
               <div class=" form-group col-md-12">Update
                 <button mat-icon-button mat-sm-button color="primary" matTooltip="Update  Social Media Link"
@@ -120,16 +120,16 @@
             </div>
             <div *ngIf="!data.socialUpdate">
               <div class="form-group col-md-12">
-                <b><small>: {{data.duration}}</small></b>
+                <b><small>: {{packageValue.duration}}</small></b>
               </div>
               <div class="form-group col-md-12">
-                <b><small>: {{data.amount}}</small></b>
+                <b><small>: {{packageValue.amount}}</small></b>
               </div>
               <div class="form-group col-md-12">
-                  <b><small>: {{data.startingDate | date}}</small></b>
+                  <b><small>: {{packageValue.startingDate | date}}</small></b>
                 </div>
                 <div class="form-group col-md-12">
-                  <b><small>: {{data.closingDate | date}}</small></b>
+                  <b><small>: {{packageValue.closingDate | date}}</small></b>
                 </div>
             </div>
           </div>
@@ -324,12 +324,12 @@
     <div class="row pageBoxl">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-secondary active">
-          <input type="radio" name="options" (click)="getSelectedReport()" id="option1" autocomplete="off"> Public
-          Viewers
+          <input type="radio" name="options" (click)="getSelectedReport()" id="option1" autocomplete="off"> 
+           Business Viewers
         </label>
         <label class="btn btn-secondary">
           <input type="radio" name="options" (click)="geSubscriberSelectedReport()" id="option2" autocomplete="off">
-          Business Viewers
+          Public Viewers
         </label>
       </div>
       <table class="table table-striped">
@@ -352,6 +352,31 @@
         </tbody>
       </table>
     </div>
-
+    <div class="row pageBoxl">
+        <div class="form-group col-md-12">
+            <div class="form-group">
+              <label> <b>Payment History</b> </label>
+            </div>
+          </div>
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Duration</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Starting Date</th>
+                  <th scope="col">Closing Date</th>
+      
+                </tr>
+              </thead>
+              <tbody *ngFor="let data of packageHistory">
+                <tr>
+                  <td scope="row">{{data.duration}}</td>
+                  <td>{{data.amount}}</td>
+                  <td>{{data.startingDate | date}}</td>
+                  <td>{{data.closingDate | date}}</td>
+                </tr>
+              </tbody>
+            </table>
+    </div>
   </form>
 </div>

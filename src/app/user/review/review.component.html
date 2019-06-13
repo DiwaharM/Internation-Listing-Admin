@@ -5,6 +5,15 @@
     </div>
   </div>
   <div class="row">
+      <div class="col-md-8">
+      </div>
+      <div class="col-md-4">
+        <mat-form-field>
+          <input matInput placeholder="Search users" (keyup)="applyFilter($event.target.value)">
+        </mat-form-field>
+      </div>
+    </div>
+  <div class="row">
 
     <table mat-table [dataSource]="reviewData" matSort class="container-fluid ">
       <ng-container matColumnDef="userName">

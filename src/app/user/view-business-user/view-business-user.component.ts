@@ -35,6 +35,7 @@ export class ViewBusinessUserComponent implements OnInit {
   temp1: any;
   totalCount: any;
   reportModel: any;
+  packageHistory: any;
   constructor(private fb: FormBuilder, private router: Router, private userService: UserService,
               private snackBar: MatSnackBar, private route: ActivatedRoute) {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -177,7 +178,10 @@ export class ViewBusinessUserComponent implements OnInit {
     this.userService.getSelectedBusinessUser(this.id).subscribe(data => {
       this.businessUserModel = data;
       this.packageValue = data[0].packageDetails;
-      console.log(this.businessUserModel);
+      const v = data[0].packageDetails.length - 1;
+      this.packageValue = data[0].packageDetails[v];
+      this.packageHistory = data[0].packageDetails;
+      console.log(this.packageHistory);
     }, error => {
       console.log(error);
     });
@@ -220,6 +224,7 @@ export class ViewBusinessUserComponent implements OnInit {
     first.companyImageName = temp[7];
     this.userService.deleteSingleCompanyImage(first, id).subscribe(value => {
       this.reportModel = value;
+      this.getSelectedBusinessUser();
     }, error => {
       console.log(error);
     });

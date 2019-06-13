@@ -38,8 +38,8 @@ export class BusinessUserComponent implements OnInit {
     /*  console.log(e); */
     this.router.navigate(['user/viewBusinessUser/', e._id]);
   }
-  applyFilter(e) {
-
+  applyFilter(filterValue: string) {
+    this.businessData.filter = filterValue.trim().toLowerCase();
   }
   getBusinessUser() {
     this.userservice.getBusinessUser().subscribe(data => {

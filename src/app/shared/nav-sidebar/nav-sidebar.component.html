@@ -1,8 +1,14 @@
+
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar class="nav-color" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
+    <span class="example-spacer">
+    <button mat-icon-button (click)=logout()>
+        LogOut
+      </button>
+    </span>
     <h1 class="example-app-name"></h1>
   </mat-toolbar>
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
